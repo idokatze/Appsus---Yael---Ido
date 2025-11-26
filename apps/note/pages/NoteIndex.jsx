@@ -1,16 +1,13 @@
-import { AppHeader } from '../../../cmps/AppHeader.jsx'
 import { NoteList } from '../cmps/NoteList.jsx'
-import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
+import {
+    showErrorMsg,
+    showSuccessMsg,
+} from '../../../services/event-bus.service.js'
 import { noteService } from '../services/note.service.js'
-
-// import { NoteFilter } from '../cmps/NoteFilter.jsx'
-// import { NoteList } from '../cmps/NoteList.jsx'
-// import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
-// import { NoteDetails } from './NoteDetails.jsx'
 
 const { useState, useEffect } = React
 
-export function NoteIndex({}) {
+export function NoteIndex() {
     const [notes, setNotes] = useState([])
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
     const [selectedNoteId, setSelectedNoteId] = useState(null)
@@ -24,7 +21,8 @@ export function NoteIndex({}) {
             .query(filterBy)
             .then(setNotes)
             .catch((err) => {
-                console.log('err:', err)
+                console.error('Failed to load notes:', err)
+                showErrorMsg('Cannot load notes')
             })
     }
 
@@ -32,12 +30,13 @@ export function NoteIndex({}) {
         noteService
             .remove(noteId)
             .then(() => {
-                console.log('noteId:', noteId)
-                setNotes((notes) => notes.filter((note) => note.id !== noteId))
+                setNotes((prevNotes) =>
+                    prevNotes.filter((note) => note.id !== noteId)
+                )
                 showSuccessMsg(`Note removed successfully (${noteId})`)
             })
             .catch((err) => {
-                console.log('err:', err)
+                console.error('Failed to remove note:', err)
                 showErrorMsg('Cannot remove note')
             })
     }
@@ -47,29 +46,20 @@ export function NoteIndex({}) {
     }
 
     function onSetFilter(newFilterBy) {
-        setFilterBy((filterBy) => ({ ...filterBy, ...newFilterBy }))
+        setFilterBy((prevFilter) => ({ ...prevFilter, ...newFilterBy }))
     }
 
-    //useEffect load notes arrow function
-
-    // const addNote = (note) => setNotes([...notes, note])
     return (
         <section className="note-index">
-            {/* <React.Fragment> */}
-            {/* <AppHeader /> */}
-
-            {/* <NoteFilter
-                    defaultFilter={filterBy}
-                    onSetFilter={onSetFilter}
-                /> */}
+            {/* Future: <SideBar /> */}
+            {/* Future: <NoteFilter defaultFilter={filterBy} onSetFilter={onSetFilter} /> */}
+            <div className="placeholder">Placeholder</div>
 
             <NoteList
                 notes={notes}
                 onSelectNoteId={onSelectNoteId}
                 onRemoveNote={onRemoveNote}
             />
-                {/* <SideBar /> */}
-            {/* </React.Fragment> */}
         </section>
     )
 }

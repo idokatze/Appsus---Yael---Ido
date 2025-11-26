@@ -1,14 +1,17 @@
+import { NoteDisplay } from './NoteDisplay.jsx'
+
 export function NoteList({ notes, setNotes }) {
+    console.log('notes:', notes)
 
     if (!notes.length) return (
         <div>No Notes</div>
     )
     return (
-        <div className="notes-grid">
+        <div className="note-list">
             {notes.map((note) => (
                 <div key={note.id} className="note-card">
+                    <NoteDisplay note={note}/>
                     {/* <NotePreview note={note} /> */}
-                    <p>note Id: {note.id}</p>
                 </div>
             ))}
         </div>

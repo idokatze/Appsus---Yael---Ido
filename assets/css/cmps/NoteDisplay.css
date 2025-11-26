@@ -1,0 +1,8 @@
+.note {
+  break-inside: avoid;     /* prevent notes from splitting */
+  margin-bottom: 16px;     /* spacing between notes */
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}

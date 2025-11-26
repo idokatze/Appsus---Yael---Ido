@@ -1,0 +1,5 @@
+.note-index {
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 20px auto;
+}
