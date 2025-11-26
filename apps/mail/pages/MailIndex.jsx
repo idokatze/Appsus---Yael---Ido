@@ -23,7 +23,7 @@ export function MailIndex() {
     }
 
     if (!mails) return <div className="loader">Loading...</div>
-    console.log('mails:', mails)
+
     const loadingClass = isLoading ? 'loading' : ''
 
     return (
