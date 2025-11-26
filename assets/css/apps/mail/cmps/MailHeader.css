@@ -1,0 +1,16 @@
+header {
+    background: var(--mail-idx-bg-clr);
+    border: none;
+
+    font-family: "Google Sans Text",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.mail-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+nav a {
+    margin: .5em;
+}

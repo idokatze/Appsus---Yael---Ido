@@ -1,3 +1,15 @@
 :root {
     --main-bg-color: lightblue;
+
+
+    /* Mail App */
+    /* Mail Index */
+    --mail-idx-bg-clr: #F8FAFD;
+    --mail-idx-font-clr: #202124;
+
+    /* Mail List */
+    --mail-list-bg-clr: #FFFFFF;
+    /* Mail */
+    --open-mail-bg-color: #F2F6FC;
+    --mail-border-clr: #e9e9e9;
 }
