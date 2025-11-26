@@ -4,7 +4,9 @@ export function AppHeader() {
 
     const { pathname } = useLocation()
 
-    return <header className={pathname === '/mail'? 'mail-header':'app-header'}>
+    const headerClass = pathname.startsWith('/mail') ? 'mail-header' : 'app-header'
+
+    return <header className={headerClass}>
         <Link to="/">
             <h3>LOGO!</h3>
         </Link>
