@@ -1,1 +1,29 @@
  /* mail list */
+.mail-index{
+    width: 100vw;
+}
+ .mail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.mail-list li {
+    display: flex;
+    /* justify-content: space-around; */
+    padding-bottom: 5px;
+    background-color: var(--clr1bg);
+    border-radius: 8px;
+}
+
+.mail-list li.loading {
+    opacity: 0.7;
+}
+
+.mail-preview{
+    display: flex;
+    width: 100%;
+    justify-content:space-between ;
+}
