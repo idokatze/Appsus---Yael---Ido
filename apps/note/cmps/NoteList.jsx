@@ -1,5 +1,4 @@
 export function NoteList({ notes, setNotes }) {
-    console.log('notes:', notes)
 
     if (!notes.length) return (
         <div>No Notes</div>

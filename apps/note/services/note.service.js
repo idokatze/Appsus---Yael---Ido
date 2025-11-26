@@ -200,7 +200,6 @@ function getDefaultFilter() {
 }
 
 function _createNotes() {
-    console.log('notes:', hardCodedNotes)
     let notes = utilService.loadFromStorage(NOTE_KEY)
 
     if (!Array.isArray(notes) || notes.length === 0) {
