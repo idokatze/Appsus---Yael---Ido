@@ -1,19 +1,21 @@
 .note-list {
-    grid-column: 2; /* right column in your parent grid */
-    background-color: rgb(32, 33, 36);
+    grid-column: 2; 
+    background-color: white;
     padding: 20px;
 
-    column-count: 4; /* number of columns */
-    column-gap: 16px; /* space between columns */
+    column-count: 4; 
+    column-gap: 16px; 
+    transition: all 0.3s ease; 
 }
 
 .placeholder {
     grid-column: 1;
 }
 .note-index {
-    background-color: yellow;
+    background-color: white;
     display: grid;
     grid-template-columns: 5em 3fr;
+    border: 2px solid black;
 }
 
 @media (max-width: 1200px) {

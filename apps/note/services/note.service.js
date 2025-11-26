@@ -4,7 +4,7 @@ const hardCodedNotes = [
         createdAt: 1112222,
         type: 'NoteTxt',
         isPinned: true,
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: 'rgb(255, 127, 80)' }, // coral
         info: { txt: 'Fullstack Me Baby!' },
     },
     {
@@ -12,10 +12,10 @@ const hardCodedNotes = [
         createdAt: 1112223,
         type: 'NoteImg',
         isPinned: false,
-        style: { backgroundColor: '#0d0' },
+        style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
         info: {
-            url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            url: 'https://source.unsplash.com/200x300/?kitten',
+            title: 'Cute kitten inspiration',
         },
     },
     {
@@ -23,7 +23,7 @@ const hardCodedNotes = [
         createdAt: 1112224,
         type: 'NoteTodos',
         isPinned: false,
-        style: { backgroundColor: '#d00' },
+        style: { backgroundColor: 'rgb(244, 164, 96)' }, // sand
         info: {
             title: 'Get my stuff together',
             todos: [
@@ -37,7 +37,7 @@ const hardCodedNotes = [
         createdAt: 1112225,
         type: 'NoteTxt',
         isPinned: false,
-        style: { backgroundColor: '#ffcc00' },
+        style: { backgroundColor: 'rgb(189, 252, 201)' }, // mint
         info: { txt: 'Remember to call mom' },
     },
     {
@@ -45,10 +45,10 @@ const hardCodedNotes = [
         createdAt: 1112226,
         type: 'NoteImg',
         isPinned: true,
-        style: { backgroundColor: '#ccffcc' },
+        style: { backgroundColor: 'rgb(188, 184, 138)' }, // sage
         info: {
-            url: 'http://placekitten.com/200/300',
-            title: 'Cute kitten inspiration',
+            url: 'https://source.unsplash.com/200x300/?bear',
+            title: 'Bear vibes',
         },
     },
     {
@@ -56,7 +56,7 @@ const hardCodedNotes = [
         createdAt: 1112227,
         type: 'NoteTodos',
         isPinned: false,
-        style: { backgroundColor: '#99ccff' },
+        style: { backgroundColor: 'rgb(200, 162, 200)' }, // lilach
         info: {
             title: 'Weekend tasks',
             todos: [
@@ -71,7 +71,7 @@ const hardCodedNotes = [
         createdAt: 1112228,
         type: 'NoteTxt',
         isPinned: true,
-        style: { backgroundColor: '#ff9999' },
+        style: { backgroundColor: 'rgb(255, 127, 80)' }, // coral
         info: { txt: 'Meeting at 10 AM tomorrow' },
     },
     {
@@ -79,10 +79,10 @@ const hardCodedNotes = [
         createdAt: 1112229,
         type: 'NoteImg',
         isPinned: false,
-        style: { backgroundColor: '#cc99ff' },
+        style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
         info: {
-            url: 'http://placebear.com/200/300',
-            title: 'Bear vibes',
+            url: 'https://source.unsplash.com/200x300/?friends',
+            title: 'Bobi and Me',
         },
     },
     {
@@ -90,7 +90,7 @@ const hardCodedNotes = [
         createdAt: 1112230,
         type: 'NoteTodos',
         isPinned: true,
-        style: { backgroundColor: '#66ffcc' },
+        style: { backgroundColor: 'rgb(244, 164, 96)' }, // sand
         info: {
             title: 'Learning goals',
             todos: [
@@ -105,8 +105,118 @@ const hardCodedNotes = [
         createdAt: 1112231,
         type: 'NoteTxt',
         isPinned: false,
-        style: { backgroundColor: '#333' },
+        // no color
         info: { txt: 'Dark mode test note' },
+    },
+    {
+        id: 'n111',
+        createdAt: 1112232,
+        type: 'NoteImg',
+        isPinned: false,
+        // no color
+        info: {
+            url: 'https://source.unsplash.com/250x250/?kitten',
+            title: 'Another kitten',
+        },
+    },
+    {
+        id: 'n112',
+        createdAt: 1112233,
+        type: 'NoteTodos',
+        isPinned: false,
+        style: { backgroundColor: 'rgb(189, 252, 201)' }, // mint
+        info: {
+            title: 'Chores',
+            todos: [
+                { txt: 'Laundry', isDone: false },
+                { txt: 'Vacuum', isDone: true },
+            ],
+        },
+    },
+    {
+        id: 'n113',
+        createdAt: 1112234,
+        type: 'NoteTxt',
+        isPinned: true,
+        // no color
+        info: { txt: 'Pinned but no color' },
+    },
+    {
+        id: 'n114',
+        createdAt: 1112235,
+        type: 'NoteImg',
+        isPinned: false,
+        style: { backgroundColor: 'rgb(200, 162, 200)' }, // lilach
+        info: {
+            url: 'https://source.unsplash.com/300x200/?bear',
+            title: 'Bear portrait',
+        },
+    },
+    {
+        id: 'n115',
+        createdAt: 1112236,
+        type: 'NoteTodos',
+        isPinned: false,
+        // no color
+        info: {
+            title: 'Study plan',
+            todos: [
+                { txt: 'Math practice', isDone: false },
+                { txt: 'Read history', isDone: true },
+            ],
+        },
+    },
+    {
+        id: 'n116',
+        createdAt: 1112237,
+        type: 'NoteTxt',
+        isPinned: false,
+        style: { backgroundColor: 'rgb(188, 184, 138)' }, // sage
+        info: { txt: 'Groceries reminder' },
+    },
+    {
+        id: 'n117',
+        createdAt: 1112238,
+        type: 'NoteImg',
+        isPinned: true,
+        // no color
+        info: {
+            url: 'https://source.unsplash.com/220x220/?kitten',
+            title: 'Pinned kitten',
+        },
+    },
+    {
+        id: 'n118',
+        createdAt: 1112239,
+        type: 'NoteTodos',
+        isPinned: false,
+        style: { backgroundColor: 'rgb(255, 127, 80)' }, // coral
+        info: {
+            title: 'Errands',
+            todos: [
+                { txt: 'Post office', isDone: false },
+                { txt: 'Pick up package', isDone: true },
+            ],
+        },
+    },
+    {
+        id: 'n119',
+        createdAt: 1112240,
+        type: 'NoteTxt',
+        isPinned: false,
+        // no color
+        info: { txt: 'Quick thought: keep learning!' },
+    },
+    {
+        id: 'n120',
+        createdAt: 1112241,
+        type: 'NoteImg',
+        isPinned: false,
+        style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
+        info: {
+            url: 'https://source.unsplash.com/210x210/?bear',
+            title: 'Bear closeup',
+        },
     },
 ]
 
