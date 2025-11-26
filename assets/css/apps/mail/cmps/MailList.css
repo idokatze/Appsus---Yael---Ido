@@ -13,7 +13,6 @@
 }
 
 .mail-list li {
-    display: flex;
     background-color: var(--clr1bg);
 }
 
