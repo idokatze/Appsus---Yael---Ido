@@ -1,26 +1,27 @@
  /* mail index  */
- .mail-index{
-    display: grid;
-    grid-template-columns: 257px 1fr 68px;
+ .mail-index {
+     display: grid;
+     grid-template-columns: 257px 1fr 68px;
+     height: 100vh;
+     background-color: var(--mail-idx-bg-clr);
+     color: var(--mail-idx-font-clr);
 
-    height: 100vh;
-
-    background-color: var(--mail-idx-bg-clr);
-    color: var(--mail-idx-font-clr);
-
-    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    .right-sidebar{
-        grid-column: 1;
-    }
-    .mail-list{
-        grid-column: 2;
-    }
-    .left-sidebar{
-        grid-column: 3;
-    }
+     font-family:"Google Sans Text",Roboto,Helvetica,Arial,sans-serif;
+     font-size: 14px;
  }
 
- .mail-display-section{
-    width: 100%;
+ .mail-index .mail-display-section {
+     width: 100%;
+ }
+
+ .mail-index .right-sidebar {
+     grid-column: 1;
+ }
+
+ .mail-index .mail-list {
+     grid-column: 2;
+ }
+
+ .mail-index .left-sidebar {
+     grid-column: 3;
  }

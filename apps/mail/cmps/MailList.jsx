@@ -4,10 +4,9 @@ export function MailList({ loadingClass, mails }) {
 
     if (!mails.length) return <div>No Mails To Show...</div>
 
-
     return (
-        <section className="mail-display-section">
-            <ul className="mail-list container">
+        <section className="mail-display-section container">
+            <ul className="mail-list">
                 {
                     mails.map(mail => (
                         <li className={loadingClass} key={mail.id}>
@@ -15,8 +14,7 @@ export function MailList({ loadingClass, mails }) {
                         </li>
                     ))
                 }
-            </ul >
+            </ul>
         </section>
-
     )
 }
