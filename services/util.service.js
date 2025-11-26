@@ -6,6 +6,7 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    getShortDate,
     loadFromStorage,
     saveToStorage
 }
@@ -70,4 +71,11 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+function getShortDate(date) {
+    date = new Date(date)
+    const month = getMonthName(date).slice(0, 3)
+    const day = date.getDate()
+    return `${month} ${day}`
 }
