@@ -1,23 +1,21 @@
-header {
-    background: lightcyan;
-    border-bottom: 2px solid white;
-}
-
 .app-header {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
+
+    background-color: lightcyan;
+    border-bottom: 2px solid white;
 }
 
-nav a {
+.app-header nav a {
     margin: .5em;
 }
 
-nav a:active {
+.app-header nav a:active {
     color: purple;
 }
 
-nav a.active {
+.app-header nav a.active {
     color: darkblue;
     font-weight: bold;
     text-decoration: overline;

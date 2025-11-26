@@ -1,16 +1,13 @@
-header {
-    background: var(--mail-idx-bg-clr);
-    border: none;
-
-    font-family: "Google Sans Text",Roboto,Helvetica,Arial,sans-serif;
-}
-
 .mail-header {
     display: flex;
     justify-content: space-between;
+    border: none;
+    font-family: "Google Sans Text",Roboto,Helvetica,Arial,sans-serif;
     padding: 8px;
+    background: var(--mail-idx-bg-clr);
 }
 
-nav a {
+
+.mail-header nav a {
     margin: .5em;
 }
