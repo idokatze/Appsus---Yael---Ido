@@ -1,1 +1,26 @@
  /* mail index  */
+ .mail-index{
+    display: grid;
+    grid-template-columns: 257px 1fr 68px;
+
+    height: 100vh;
+
+    background-color: var(--mail-idx-bg-clr);
+    color: var(--mail-idx-font-clr);
+
+    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    .right-sidebar{
+        grid-column: 1;
+    }
+    .mail-list{
+        grid-column: 2;
+    }
+    .left-sidebar{
+        grid-column: 3;
+    }
+ }
+
+ .mail-display-section{
+    width: 100%;
+ }

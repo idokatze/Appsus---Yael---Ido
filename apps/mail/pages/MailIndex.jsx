@@ -1,5 +1,7 @@
-import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
+import { MailList } from "../cmps/MailList.jsx"
+import { RightSideBar } from "../cmps/RightSideBar.jsx"
+import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 
 const { useState, useEffect } = React
 const { Link, useSearchParams } = ReactRouterDOM
@@ -28,7 +30,9 @@ export function MailIndex() {
 
     return (
         <section className="mail-index">
-            <MailList loadingClass={loadingClass} mails={mails}/>            
+            <RightSideBar />
+            <MailList loadingClass={loadingClass} mails={mails}/>
+            <LeftSideBar />           
         </section>
 
     )
