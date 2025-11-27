@@ -6,6 +6,7 @@ const MAIL_KEY = 'mailDB'
 const gMails = [
   {
     id: 'e101',
+    name: 'Momo',
     createdAt: 1714028800000,
     subject: 'Miss you!',
     body: 'Would love to catch up sometime. Been thinking about you lately.',
@@ -17,6 +18,7 @@ const gMails = [
   },
   {
     id: 'e102',
+    name: 'ShopNow',
     createdAt: 1714032400000,
     subject: 'Your order has shipped',
     body: 'Your package is on its way! Expected delivery: 2–3 business days.',
@@ -28,6 +30,7 @@ const gMails = [
   },
   {
     id: 'e103',
+    name: 'Boss',
     createdAt: 1714036000000,
     subject: 'Meeting rescheduled',
     body: 'Reminder: our meeting moved to Thursday.',
@@ -39,6 +42,7 @@ const gMails = [
   },
   {
     id: 'e104',
+    name: 'Mom',
     createdAt: 1714039600000,
     subject: 'Family update',
     body: 'Hope you’re doing well! The family misses you and can’t wait to meet soon.',
@@ -50,6 +54,7 @@ const gMails = [
   },
   {
     id: 'e105',
+    name: 'Friend',
     createdAt: 1714043200000,
     subject: 'Beach day moved',
     body: 'Weather looks better on Thursday — let’s go then.',
@@ -62,6 +67,7 @@ const gMails = [
 
   {
     id: 'e106',
+    name: 'Promo',
     createdAt: 1714046800000,
     subject: '🔥 Limited-Time Offer Just for You!',
     body: 'Save 40% today! Huge discounts across all categories. Don’t miss this exclusive offer.',
@@ -73,6 +79,7 @@ const gMails = [
   },
   {
     id: 'e107',
+    name: 'Spammy',
     createdAt: 1714050400000,
     subject: 'You won a free prize!!! 🎉',
     body: 'Click HERE to claim your reward now! Limited time!',
@@ -84,9 +91,10 @@ const gMails = [
   },
   {
     id: 'e108',
+    name: 'Torah Weekly',
     createdAt: 1714054000000,
     subject: 'פרשת השבוע - ויצא',
-    body: 'שלום! השבוע קוראים את פרשת ויצא. יעקב יוצא לחרן, חלום הסולם, נישואיו ללאה ורחל ולידת השבטים. מסר השבוע: אמונה ומסירות.',
+    body: 'שלום! השבוע קוראים את פרשת ויצא...',
     isRead: false,
     sentAt: 1714054002000,
     removedAt: null,
@@ -95,9 +103,10 @@ const gMails = [
   },
   {
     id: 'e109',
+    name: 'Noa',
     createdAt: 1714057600000,
     subject: 'שלום, רציתי לשאול',
-    body: 'היי, יש לי שאלה לגבי מה שדיברנו בפעם האחרונה. אפשר רגע?',
+    body: 'היי, יש לי שאלה לגבי מה שדיברנו...',
     isRead: true,
     sentAt: 1714057603000,
     removedAt: null,
@@ -106,9 +115,10 @@ const gMails = [
   },
   {
     id: 'e110',
+    name: 'Me',
     createdAt: 1714061200000,
     subject: 'Note to myself',
-    body: 'Reminder: finish the side project. Break tasks into small chunks and focus.',
+    body: 'Reminder: finish the side project...',
     isRead: false,
     sentAt: 1714061202000,
     removedAt: null,
@@ -117,9 +127,10 @@ const gMails = [
   },
   {
     id: 'e111',
+    name: 'Billing',
     createdAt: 1714064800000,
     subject: 'Invoice for April',
-    body: 'Your monthly invoice is ready to view. Log into your account to download the PDF.',
+    body: 'Your monthly invoice is ready to view...',
     isRead: false,
     sentAt: 1714064801000,
     removedAt: null,
@@ -128,6 +139,7 @@ const gMails = [
   },
   {
     id: 'e112',
+    name: 'Daniel',
     createdAt: 1714068400000,
     subject: 'Quick question',
     body: 'Hey! Are you free for a short call later today?',
@@ -139,9 +151,10 @@ const gMails = [
   },
   {
     id: 'e113',
+    name: 'Delivery',
     createdAt: 1714072000000,
     subject: 'Your package is waiting',
-    body: 'We tried delivering your package but you weren’t home. Please schedule redelivery.',
+    body: 'We tried delivering your package...',
     isRead: false,
     sentAt: 1714072003000,
     removedAt: null,
@@ -150,9 +163,10 @@ const gMails = [
   },
   {
     id: 'e114',
+    name: 'Security',
     createdAt: 1714075600000,
     subject: 'Security alert',
-    body: 'A login attempt was detected from a new device. If this wasn’t you, reset your password.',
+    body: 'A login attempt was detected...',
     isRead: true,
     sentAt: 1714075602000,
     removedAt: null,
@@ -161,6 +175,7 @@ const gMails = [
   },
   {
     id: 'e115',
+    name: 'Lily',
     createdAt: 1714079200000,
     subject: 'Weekend plans?',
     body: 'Any chance you want to plan something fun this weekend?',
@@ -172,9 +187,10 @@ const gMails = [
   },
   {
     id: 'e116',
+    name: 'Support',
     createdAt: 1714082800000,
     subject: 'Your subscription expires soon',
-    body: 'Your premium subscription expires in 5 days. Renew now to avoid interruptions.',
+    body: 'Your premium subscription expires in 5 days...',
     isRead: false,
     sentAt: 1714082802000,
     removedAt: null,
@@ -183,9 +199,10 @@ const gMails = [
   },
   {
     id: 'e117',
+    name: 'Recruiting',
     createdAt: 1714086400000,
     subject: 'Job opportunity',
-    body: 'We reviewed your profile and think you might be a good fit for an open position. Let us know if you’d like more details.',
+    body: 'We reviewed your profile and think you might be a good fit...',
     isRead: false,
     sentAt: 1714086403000,
     removedAt: null,
@@ -194,9 +211,10 @@ const gMails = [
   },
   {
     id: 'e118',
+    name: 'Chef',
     createdAt: 1714090000000,
     subject: 'Recipe you asked for',
-    body: 'Here’s the recipe: 2 cups flour, 3 eggs, 1/2 cup sugar… enjoy!',
+    body: 'Here’s the recipe...',
     isRead: true,
     sentAt: 1714090002000,
     removedAt: null,
@@ -205,9 +223,10 @@ const gMails = [
   },
   {
     id: 'e119',
+    name: 'System Admin',
     createdAt: 1714093600000,
     subject: 'System maintenance',
-    body: 'Our services will be undergoing maintenance tonight from 01:00 to 05:00. Some features may be unavailable.',
+    body: 'Our services will be undergoing maintenance tonight...',
     isRead: false,
     sentAt: 1714093603000,
     removedAt: null,
@@ -216,9 +235,10 @@ const gMails = [
   },
   {
     id: 'e120',
+    name: 'Friend 2',
     createdAt: 1714097200000,
     subject: 'Congrats!',
-    body: 'Just wanted to say congratulations on your achievement! Really happy for you.',
+    body: 'Just wanted to say congratulations!',
     isRead: true,
     sentAt: 1714097202000,
     removedAt: null,
@@ -227,38 +247,69 @@ const gMails = [
   }
 ]
 
+const gLoggedinUser = {
+  email: 'user@appsus.com',
+  fullname: 'Mahatma Appsus'
+}
+
 _createMails()
 
 export const mailService = {
-    query,
-    get,
-    remove,
-    save,
-    getEmptyMail,
+  query,
+  get,
+  remove,
+  save,
+  getEmptyMail,
+  getDefaultFilter,
+  markAsRead
 }
 
-function query() {
-    return storageService.query(MAIL_KEY)
+function query(filterBy = {}) {
+
+  return storageService.query(MAIL_KEY)
+    .then(mails => {
+      const { status } = filterBy
+      if (status === 'inbox') {
+        mails = mails.filter(mail => mail.to === gLoggedinUser.email)
+      }
+      if (status === 'sent') {
+        mails = mails.filter(mail => mail.from === gLoggedinUser.email)
+      }
+      if (status === 'trash') {
+        mails = mails.filter(mail => mail.removedAt)
+      }
+      return mails
+    })
 }
 
 function get(mailId) {
-    return storageService.get(MAIL_KEY, mailId)
+  return storageService.get(MAIL_KEY, mailId)
 }
 
 function remove(mailId) {
-    return storageService.remove(MAIL_KEY, mailId)
+  return storageService.remove(MAIL_KEY, mailId)
 }
 
 function save(mail) {
-    if (mail.id) {
-        return storageService.put(MAIL_KEY, mail)
-    } else {
-        return storageService.post(MAIL_KEY, mail)
-    }
+  if (mail.id) {
+    return storageService.put(MAIL_KEY, mail)
+  } else {
+    return storageService.post(MAIL_KEY, mail)
+  }
+}
+
+function getDefaultFilter() {
+  return {
+    status: 'inbox',
+    txt: '',
+    isRead: true,
+    isStared: true,
+    lables: []
+  }
 }
 
 function getEmptyMail() {
-    return   {
+  return {
     id: '',
     createdAt: new Date.now(),
     subject: '',
@@ -272,15 +323,24 @@ function getEmptyMail() {
 }
 
 function _createMails() {
-    let mails = utilService.loadFromStorage(MAIL_KEY)
-    if (!mails || !mails.length) {
-        mails = gMails
-        utilService.saveToStorage(MAIL_KEY, mails)
-    }
+  let mails = utilService.loadFromStorage(MAIL_KEY)
+  if (!mails || !mails.length) {
+    mails = gMails
+    utilService.saveToStorage(MAIL_KEY, mails)
+  }
 }
 
 function _createMail() {
-    const mail = getEmptyMail()
-    mail.id = makeId()
-    return mail
+  const mail = getEmptyMail()
+  mail.id = makeId()
+  return mail
+}
+
+function markAsRead(mailId) {
+  return get(mailId).then(mail => {
+    if (!mail.isRead) {
+      mail.isRead = true
+      return save(mail)
+    }
+  })
 }

@@ -1,6 +1,6 @@
 import { MailPreview } from "MailPreview.jsx"
 
-export function MailList({ loadingClass, mails }) {
+export function MailList({ loadingClass, mails, onOpenMail }) {
 
     if (!mails.length) return <div>No Mails To Show...</div>
 
@@ -9,8 +9,8 @@ export function MailList({ loadingClass, mails }) {
             <ul className="mail-list">
                 {
                     mails.map(mail => (
-                        <li className={loadingClass} key={mail.id}>
-                            <MailPreview mail={mail} />
+                        <li className={loadingClass} key={mail.id} >
+                            <MailPreview mail={mail} onOpenMail={onOpenMail} />
                         </li>
                     ))
                 }

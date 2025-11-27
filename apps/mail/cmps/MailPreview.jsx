@@ -1,14 +1,16 @@
 import { utilService } from '../../../services/util.service.js'
 
-export function MailPreview({ mail }) {
+export function MailPreview({ mail, onOpenMail }) {
 
-    const { from, subject, sentAt } = mail
+    const { id, name, subject, sentAt, isRead } = mail
+
     return (
-        <article className="mail-preview">
+        <article onClick={() => onOpenMail(id)} 
+        className= {`mail-preview ${isRead? 'read-mail': ''}`}>
 
-            <div className="sender-section">{from}</div>
+            <div className="sender-section">{name}</div>
 
-            <div className="mail-txt">{subject}</div>
+            <div className="mail-subject">{subject}</div>
 
             <div className="date-section">{utilService.getShortDate(sentAt)}</div>
 
