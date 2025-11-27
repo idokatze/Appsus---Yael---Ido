@@ -10,7 +10,8 @@ export function MailList({ loadingClass, mails, onOpenMail }) {
                 {
                     mails.map(mail => (
                         <li className={loadingClass} key={mail.id} >
-                            <MailPreview mail={mail} onOpenMail={onOpenMail} />
+                            <MailPreview mail={mail} 
+                            onOpenMail={onOpenMail} />
                         </li>
                     ))
                 }

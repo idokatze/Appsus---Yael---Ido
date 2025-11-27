@@ -1,16 +1,19 @@
 import { mailService } from "../services/mail.service.js"
 import { MailList } from "../cmps/MailList.jsx"
+import { MailDetails } from "../pages/MailDetails.jsx"
 import { RightSideBar } from "../cmps/RightSideBar.jsx"
 import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 
 const { useState, useEffect } = React
-const { Link, useSearchParams } = ReactRouterDOM
+const { Link, useSearchParams, useNavigate } = ReactRouterDOM
 
 export function MailIndex() {
 
     const [mails, setMails] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
+    const [selectedMail, setSelectedMail] = useState(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         loadMails()
@@ -26,17 +29,27 @@ export function MailIndex() {
 
     function onSetFilter(newFilterBy) {
         setFilterBy(filterBy => ({ ...filterBy, ...newFilterBy }))
+        setSelectedMail(null)
     }
 
     function onOpenMail(mailId) {
-
         setMails(mails =>
             mails.map(mail => mail.id === mailId ?
-                { ...mail, isRead: true } : mail)
-        )
+                { ...mail, isRead: true } : mail))
 
-        mailService.markAsRead(mailId)
+        mailService.markAsRead(mailId).catch(err => {
+            console.error("Failed to mark as read:", err)
+        })
+
+        mailService.get(mailId).then(mail => {
+            setSelectedMail(mail)})
+            .catch(err => {
+            console.error("Failed to load mail:", err);
+        })
+
     }
+
+    const onBack = () => setSelectedMail(null);
 
     if (!mails) return <div className="loader">Loading...</div>
 
@@ -48,10 +61,18 @@ export function MailIndex() {
                 defaultFilter={filterBy}
                 onSetFilter={onSetFilter}
             />
-            <MailList
-                loadingClass={loadingClass}
-                mails={mails}
-                onOpenMail={onOpenMail} />
+            {selectedMail ?
+                (<MailDetails
+                    mail={selectedMail}
+                    onBack={onBack} />)
+                : (
+                    <MailList
+                        loadingClass={loadingClass}
+                        mails={mails}
+                        onOpenMail={onOpenMail}
+                        onSelectMail={setSelectedMail}
+                    />)
+            }
             <LeftSideBar />
         </section>
 
