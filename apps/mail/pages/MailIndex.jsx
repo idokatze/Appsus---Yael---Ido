@@ -6,7 +6,6 @@ import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 const { useState, useEffect } = React
 const { Link, useSearchParams } = ReactRouterDOM
 
-
 export function MailIndex() {
 
     const [mails, setMails] = useState(null)
