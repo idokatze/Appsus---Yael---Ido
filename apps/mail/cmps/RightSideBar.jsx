@@ -1,7 +1,48 @@
+const { useState, useEffect, useRef } = React
 
-export function RightSideBar() {
+export function RightSideBar({ defaultFilter, onSetFilter }) {
+
+    const [filterByToEdit, setFilterByToEdit] = useState({ ...defaultFilter })
+
+    function handleStatusChange(status) {
+        setFilterByToEdit(prevFilter => ({ ...prevFilter, status }))
+    }
+
+    useEffect(() => {
+        onSetFilter(filterByToEdit)
+    }, [filterByToEdit])
+
+    const { status } = filterByToEdit
 
     return (
-        <section className="right-sidebar"></section>
+        <section className="right-sidebar">
+            <div className="side-nav-btn compose-btn">
+                <i className="fa-solid fa-pencil"></i>Compose</div>
+
+            <div className="side-nav-btn inbox-btn"
+            onClick={() => handleStatusChange('inbox')}>
+                <i className="fa-solid fa-inbox"></i>
+                Inbox
+            </div>
+
+            <div className="side-nav-btn starred-btn">
+                <i className="fa-regular fa-star"></i>
+                Starred
+            </div>
+
+            <div className="side-nav-btn sent-btn" 
+            onClick={() => handleStatusChange('sent')}>
+                <i className="fa-regular fa-paper-plane"></i>
+                Sent
+            </div>
+
+            <div className="side-nav-btn draft-btn"
+            onClick={() => handleStatusChange('draft')}>
+                <i className="fa-regular fa-note-sticky"></i>Draft</div>
+
+            <div className="side-nav-btn trash-btn"
+            onClick={() => handleStatusChange('trash')}>
+                <i className="fa-regular fa-trash-can"></i>Bin</div>
+        </section>
     )
 }

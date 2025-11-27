@@ -15,7 +15,7 @@ export function MailIndex() {
 
     useEffect(() => {
         loadMails()
-    }, [])
+    }, [filterBy])
 
     function loadMails() {
         mailService.query(filterBy)
@@ -46,7 +46,10 @@ export function MailIndex() {
 
     return (
         <section className="mail-index">
-            <RightSideBar />
+            <RightSideBar
+                defaultFilter={filterBy}
+                onSetFilter={onSetFilter}
+            />
             <MailList
                 loadingClass={loadingClass}
                 mails={mails}

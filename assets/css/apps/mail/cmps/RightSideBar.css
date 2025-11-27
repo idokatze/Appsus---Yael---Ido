@@ -1,0 +1,11 @@
+.side-nav-btn{
+    cursor: pointer;
+    padding: 10px;
+
+    display: flex;
+    gap: 5px;
+}
+
+.side-nav-btn:hover{
+    scale: 1.025;
+}
