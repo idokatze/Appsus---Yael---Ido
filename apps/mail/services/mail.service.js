@@ -305,7 +305,7 @@ const gMails = [
     from: 'promo@bigsales.com',
     to: 'user@appsus.com'
   },
-   {
+  {
     id: 'e126',
     name: 'Me',
     createdAt: 1714170000000,
@@ -505,17 +505,30 @@ export const mailService = {
 }
 
 function query(filterBy = {}) {
+  const { status, isStared, txt } = filterBy
 
-  return storageService.query(MAIL_KEY)
-    .then(mails => {
-      const { status } = filterBy
+  return storageService.query(MAIL_KEY).then(mails => {
+
+    if (txt) {
+      const regExp = new RegExp(txt, 'i')
+      return mails.filter(mail =>
+        regExp.test(mail.subject) || regExp.test(mail.body)
+      )
+    }
+    
+    if (isStared) {
+      return mails.filter(mail => mail.isStared === true)
+    }
+
+    if (status) {
       if (status === 'inbox') {
-        mails = mails.filter(mail => 
+        mails = mails.filter(mail =>
           mail.to === gLoggedinUser.email && !mail.removedAt
         )
       }
       if (status === 'sent') {
-        mails = mails.filter(mail => mail.from === gLoggedinUser.email)
+        mails = mails.filter(mail =>
+          mail.from === gLoggedinUser.email && mail.sentAt)
       }
       if (status === 'trash') {
         mails = mails.filter(mail => mail.removedAt)
@@ -523,8 +536,9 @@ function query(filterBy = {}) {
       if (status === 'draft') {
         mails = mails.filter(mail => !mail.sentAt)
       }
-      return mails
-    })
+    }
+    return mails
+  })
 }
 
 function get(mailId) {
@@ -547,9 +561,9 @@ function getDefaultFilter() {
   return {
     status: 'inbox',
     txt: '',
-    isRead: true,
-    isStared: true,
-    isRemoved: true,
+    isRead: false,
+    isStared: false,
+    isRemoved: false,
     lables: []
   }
 }

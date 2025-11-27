@@ -1,11 +1,20 @@
-const { useState, useEffect, useRef } = React
+const { useState, useEffect } = React
 
 export function RightSideBar({ defaultFilter, onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState({ ...defaultFilter })
 
     function handleStatusChange(status) {
-        setFilterByToEdit(prevFilter => ({ ...prevFilter, status }))
+        setFilterByToEdit(prevFilter => 
+            ({ ...prevFilter, status, isStared: false }))
+    }
+
+    function onShowStarred() {
+        setFilterByToEdit(prevFilter => ({
+            ...prevFilter,
+            status: '',
+            isStared: true
+        }))
     }
 
     useEffect(() => {
@@ -20,28 +29,29 @@ export function RightSideBar({ defaultFilter, onSetFilter }) {
                 <i className="fa-solid fa-pencil"></i>Compose</div>
 
             <div className="side-nav-btn inbox-btn"
-            onClick={() => handleStatusChange('inbox')}>
+                onClick={() => handleStatusChange('inbox')}>
                 <i className="fa-solid fa-inbox"></i>
                 Inbox
             </div>
 
-            <div className="side-nav-btn starred-btn">
+            <div className="side-nav-btn starred-btn"
+                onClick={onShowStarred}>
                 <i className="fa-regular fa-star"></i>
                 Starred
             </div>
 
-            <div className="side-nav-btn sent-btn" 
-            onClick={() => handleStatusChange('sent')}>
+            <div className="side-nav-btn sent-btn"
+                onClick={() => handleStatusChange('sent')}>
                 <i className="fa-regular fa-paper-plane"></i>
                 Sent
             </div>
 
             <div className="side-nav-btn draft-btn"
-            onClick={() => handleStatusChange('draft')}>
+                onClick={() => handleStatusChange('draft')}>
                 <i className="fa-regular fa-note-sticky"></i>Draft</div>
 
             <div className="side-nav-btn trash-btn"
-            onClick={() => handleStatusChange('trash')}>
+                onClick={() => handleStatusChange('trash')}>
                 <i className="fa-regular fa-trash-can"></i>Bin</div>
         </section>
     )

@@ -21,7 +21,6 @@ export function MailIndex() {
             .then(mails => setMails(mails))
             .catch(err => {
                 console.log('err:', err)
-                showErrorMsg('Cannot get mails!')
             })
     }
 
