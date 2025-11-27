@@ -6,11 +6,11 @@ export function MailPreview({ mail }) {
     return (
         <article className="mail-preview">
 
-            <div className='sender-section'>{from}</div>
+            <div className="sender-section">{from}</div>
 
-            <div>{subject}</div>
+            <div className="mail-txt">{subject}</div>
 
-            <div className='date-section'>{utilService.getShortDate(sentAt)}</div>
+            <div className="date-section">{utilService.getShortDate(sentAt)}</div>
 
         </article>
     )
