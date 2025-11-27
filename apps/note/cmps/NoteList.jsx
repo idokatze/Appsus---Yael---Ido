@@ -12,14 +12,20 @@ function onShare(noteId) {
     // share modal (email, facebook, download)
 }
 
-function onDelete(noteId) {
-    console.log('delete')
-    // crudl
-    // setState
-}
+export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
+    function togglePin(noteId) {
+        setNotes((prevNotes) =>
+            prevNotes.map((note) =>
+                note.id === noteId
+                    ? { ...note, isPinned: !note.isPinned } // flip isPinned flag
+                    : note
+            )
+        )
+    }
 
-export function NoteList({ notes, setNotes }) {
-    console.log('notes:', notes)
+    function onDelete(noteId) {
+        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId))
+    }
 
     if (!notes.length) return <div>No Notes</div>
     return (
@@ -30,8 +36,15 @@ export function NoteList({ notes, setNotes }) {
                     style={note.style}
                     className="note  note-card"
                 >
-                    <button className="pin-btn">
-                    <i className="fa-solid fa-thumbtack"></i>
+                    <button
+                        className="btn-pin"
+                        onClick={() => togglePin(note.id)}
+                    >
+                        {note.isPinned ? (
+                            <i className="pin fa-solid fa-thumbtack"></i>
+                        ) : (
+                            <i className="pin fa-solid fa-thumbtack unpinned"></i>
+                        )}
                     </button>
 
                     <NoteDisplay note={note} />

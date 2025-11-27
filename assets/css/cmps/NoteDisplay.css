@@ -8,12 +8,54 @@
     transition: box-shadow 0.3s ease-in-out; /* Transition 'box-shadow' over 0.3 seconds with an ease-in-out timing function */
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    position: relative;
 }
 
 .note:hover {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.pin-btn {
-    background-color: yellow;
+.pin {
+    z-index: 2;
+    transition: transform 0.2s ease;
+}
+
+.btn-pin {
+    margin: 1em;
+    all: unset;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-pin::before {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: rgb(128, 128, 128);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 0;
+}
+
+.btn-pin i {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-pin:hover::before {
+    opacity: 0.3;
+}
+
+.unpinned {
+    transform: rotate(180deg);
+    opacity: 0.3;
 }

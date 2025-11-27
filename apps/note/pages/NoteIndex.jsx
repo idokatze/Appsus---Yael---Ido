@@ -57,6 +57,7 @@ export function NoteIndex() {
 
             <NoteList
                 notes={notes}
+                setNotes={setNotes}
                 onSelectNoteId={onSelectNoteId}
                 onRemoveNote={onRemoveNote}
             />
