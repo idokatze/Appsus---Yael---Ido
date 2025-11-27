@@ -4,6 +4,7 @@ export function NoteDisplay({ note }) {
         case 'NoteTxt':
             return (
                 <div className="note-text">
+                    <h4>{note.info.title}</h4>
                     <p>{note.info.txt}</p>
                 </div>
             )

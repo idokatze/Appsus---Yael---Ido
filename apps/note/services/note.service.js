@@ -5,7 +5,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: true,
         style: { backgroundColor: 'rgb(255, 127, 80)' }, // coral
-        info: { txt: 'Fullstack Me Baby!' },
+        info: { title: 'First Note', txt: 'Fullstack Me Baby!' },
     },
     {
         id: 'n102',
@@ -38,7 +38,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: false,
         style: { backgroundColor: 'rgb(189, 252, 201)' }, // mint
-        info: { txt: 'Remember to call mom' },
+        info: { title: 'Reminder', txt: 'Remember to call mom' },
     },
     {
         id: 'n105',
@@ -72,7 +72,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: true,
         style: { backgroundColor: 'rgb(255, 127, 80)' }, // coral
-        info: { txt: 'Meeting at 10 AM tomorrow' },
+        info: { title: 'Meeting', txt: 'Meeting at 10 AM tomorrow' },
     },
     {
         id: 'n108',
@@ -106,7 +106,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: false,
         // no color
-        info: { txt: 'Dark mode test note' },
+        info: { title: 'Dark Mode', txt: 'Dark mode test note' },
     },
     {
         id: 'n111',
@@ -139,7 +139,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: true,
         // no color
-        info: { txt: 'Pinned but no color' },
+        info: { title: 'Pinned Note', txt: 'Pinned but no color' },
     },
     {
         id: 'n114',
@@ -172,7 +172,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: false,
         style: { backgroundColor: 'rgb(188, 184, 138)' }, // sage
-        info: { txt: 'Groceries reminder' },
+        info: { title: 'Groceries', txt: 'Groceries reminder' },
     },
     {
         id: 'n117',
@@ -205,7 +205,7 @@ const hardCodedNotes = [
         type: 'NoteTxt',
         isPinned: false,
         // no color
-        info: { txt: 'Quick thought: keep learning!' },
+        info: { title: 'Quick Thought', txt: 'Quick thought: keep learning!' },
     },
     {
         id: 'n120',
@@ -231,6 +231,7 @@ export const noteService = {
     getDefaultFilter,
 }
 
+let gId = 'n121'
 const NOTE_KEY = 'noteDB'
 
 _createNotes()
@@ -275,11 +276,17 @@ function save(note) {
     }
 }
 
+function nextId(prefix = 'n') {
+    const num = parseInt(gId.slice(prefix.length), 10)
+    gId = prefix + (num + 1)
+    return prefix + num
+}
+
 function getEmptyNote(type = 'NoteTxt') {
     const note = {
-        id: '',
+        id: nextId(),
         createdAt: Date.now(),
-        type,
+        type: type,
         isPinned: false,
         style: { backgroundColor: '#ffffff' },
         info: {},
@@ -287,7 +294,7 @@ function getEmptyNote(type = 'NoteTxt') {
 
     switch (type) {
         case 'NoteTxt':
-            note.info = { txt: '' }
+            note.info = { title: '', txt: '' }
             break
         case 'NoteImg':
             note.info = { url: '', title: '' }

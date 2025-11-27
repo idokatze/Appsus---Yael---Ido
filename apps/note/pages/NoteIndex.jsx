@@ -28,6 +28,21 @@ export function NoteIndex() {
             })
     }
 
+    function onAddNote({ title, txt }) {
+        console.log('onAddNote called with:', { title, txt })
+        const newNote = noteService.getEmptyNote('NoteTxt')
+        newNote.info.txt = txt
+        newNote.info.title = title
+        console.log('newNote:', newNote)
+
+        setNotes((prevNotes) => {
+            console.log('prevNotes before update:', prevNotes)
+            const updated = [newNote, ...prevNotes]
+            console.log('updated notes array:', updated)
+            return updated
+        })
+    }
+
     function onRemoveNote(noteId) {
         noteService
             .remove(noteId)
@@ -56,7 +71,7 @@ export function NoteIndex() {
             {/* Future: <SideBar /> */}
             {/* Future: <NoteFilter defaultFilter={filterBy} onSetFilter={onSetFilter} /> */}
             <div className="placeholder">Placeholder</div>
-            <NewNote />
+            <NewNote onAddNote={onAddNote} />
             <NoteList
                 notes={notes}
                 setNotes={setNotes}

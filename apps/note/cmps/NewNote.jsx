@@ -6,7 +6,6 @@ export function NewNote({ onAddNote }) {
     const modalRef = useRef(null)
 
     function openModal() {
-        console.log('hello')
         setIsModalOpen(true)
     }
 
@@ -18,12 +17,14 @@ export function NewNote({ onAddNote }) {
         if (!modalRef.current) return
         const title = modalRef.current.querySelector('[name="title"]').value
         const txt = modalRef.current.querySelector('[name="txt"]').value
-
+        
         // only save if something was entered
         if (title.trim() || txt.trim()) {
             onAddNote({ title, txt })
         }
         closeModal()
+        modalRef.current.querySelector('[name="title"]').value = ''
+        modalRef.current.querySelector('[name="txt"]').value = ''
     }
 
     useEffect(() => {
