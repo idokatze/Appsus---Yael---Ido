@@ -14,8 +14,8 @@ const hardCodedNotes = [
         isPinned: false,
         style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
         info: {
-            url: 'https://source.unsplash.com/200x300/?kitten',
-            title: 'Cute kitten inspiration',
+            url: 'https://images.unsplash.com/photo-1699726165307-862e978fe3a1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 1',
         },
     },
     {
@@ -47,8 +47,8 @@ const hardCodedNotes = [
         isPinned: true,
         style: { backgroundColor: 'rgb(188, 184, 138)' }, // sage
         info: {
-            url: 'https://source.unsplash.com/200x300/?bear',
-            title: 'Bear vibes',
+            url: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 2',
         },
     },
     {
@@ -81,8 +81,8 @@ const hardCodedNotes = [
         isPinned: false,
         style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
         info: {
-            url: 'https://source.unsplash.com/200x300/?friends',
-            title: 'Bobi and Me',
+            url: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=1294&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 3',
         },
     },
     {
@@ -115,8 +115,8 @@ const hardCodedNotes = [
         isPinned: false,
         // no color
         info: {
-            url: 'https://source.unsplash.com/250x250/?kitten',
-            title: 'Another kitten',
+            url: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppies 4',
         },
     },
     {
@@ -148,8 +148,8 @@ const hardCodedNotes = [
         isPinned: false,
         style: { backgroundColor: 'rgb(200, 162, 200)' }, // lilach
         info: {
-            url: 'https://source.unsplash.com/300x200/?bear',
-            title: 'Bear portrait',
+            url: 'https://images.unsplash.com/photo-1529467037979-99d067b7677d?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 5',
         },
     },
     {
@@ -181,8 +181,8 @@ const hardCodedNotes = [
         isPinned: true,
         // no color
         info: {
-            url: 'https://source.unsplash.com/220x220/?kitten',
-            title: 'Pinned kitten',
+            url: 'https://images.unsplash.com/photo-1504826260979-242151ee45b7?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 6',
         },
     },
     {
@@ -214,8 +214,8 @@ const hardCodedNotes = [
         isPinned: false,
         style: { backgroundColor: 'rgb(255, 218, 185)' }, // peach
         info: {
-            url: 'https://source.unsplash.com/210x210/?bear',
-            title: 'Bear closeup',
+            url: 'https://images.unsplash.com/photo-1541108476383-81a896c2e478?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Puppy 7',
         },
     },
 ]

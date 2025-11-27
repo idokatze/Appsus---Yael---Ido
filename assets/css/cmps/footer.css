@@ -1,0 +1,32 @@
+.note-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
+.note-footer .btn {
+    all: unset;
+    cursor: pointer;
+    position: relative;
+}
+
+/* circle skeleton */
+.note-footer .btn::before {
+    content: '';
+    background-color: rgb(128, 128, 128);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+}
+
+.note-footer .btn:hover::before {
+    z-index: 0;
+    opacity: .3;
+}
