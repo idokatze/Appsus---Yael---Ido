@@ -5,10 +5,15 @@
     border-radius: 6px;
     padding: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out; /* Transition 'box-shadow' over 0.3 seconds with an ease-in-out timing function */
     font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Regular */
+    font-weight: 400;
 }
 
 .note:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.pin-btn {
+    background-color: yellow;
 }

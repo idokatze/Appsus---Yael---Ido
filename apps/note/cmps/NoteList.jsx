@@ -25,7 +25,15 @@ export function NoteList({ notes, setNotes }) {
     return (
         <div className="note-list">
             {notes.map((note) => (
-                <div key={note.id} style={note.style} className="note  note-card">
+                <div
+                    key={note.id}
+                    style={note.style}
+                    className="note  note-card"
+                >
+                    <button className="pin-btn">
+                    <i className="fa-solid fa-thumbtack"></i>
+                    </button>
+
                     <NoteDisplay note={note} />
                     <NoteFooter
                         note={note}

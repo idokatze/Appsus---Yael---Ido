@@ -10,7 +10,6 @@
     position: relative;
 }
 
-/* circle skeleton */
 .note-footer .btn::before {
     content: '';
     background-color: rgb(128, 128, 128);
