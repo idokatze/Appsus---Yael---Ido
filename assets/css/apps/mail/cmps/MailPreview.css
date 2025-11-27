@@ -3,7 +3,7 @@
     grid-template-columns: minmax(200px, 1fr) 1fr minmax(70px, 1fr);
 
     width: 100%;
-    background-color: var(--open-mail-bg-color);
+    background-color: var(--mail-bg-color);
     border: solid 0.1px var(--mail-border-clr);
 
     padding: 10px 10px;
@@ -16,15 +16,19 @@
     }
 }
 
-.mail-preview .sender-section{
+.sender-section{
     grid-column: 1;
 }
 
-.mail-preview .mail-txt{
+.mail-subject{
     grid-column: 2;
 }
 
-.mail-preview .date-section{
+.date-section{
     grid-column: 3;
     justify-self: end;
+}
+
+.read-mail{
+    background: var(--open-mail-bg-clr);
 }
