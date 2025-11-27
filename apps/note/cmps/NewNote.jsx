@@ -17,7 +17,7 @@ export function NewNote({ onAddNote }) {
         if (!modalRef.current) return
         const title = modalRef.current.querySelector('[name="title"]').value
         const txt = modalRef.current.querySelector('[name="txt"]').value
-        
+
         // only save if something was entered
         if (title.trim() || txt.trim()) {
             onAddNote({ title, txt })
@@ -61,6 +61,7 @@ export function NewNote({ onAddNote }) {
                             type="text"
                             name="title"
                             placeholder="Enter a title..."
+                            className="note-title-input"
                         />
                         <textarea
                             name="txt"

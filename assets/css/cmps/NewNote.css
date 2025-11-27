@@ -32,6 +32,7 @@
 .fake-text {
     cursor: text;
     padding: 1em;
+    font-family: 'Roboto', sans-serif;
 }
 .fake-icons {
     display: flex;
@@ -42,6 +43,47 @@
     position: relative;
     padding: 0.5em;
     cursor: pointer;
+}
+
+.modal {
+    color: grey;
+    border-radius: 5px;
+    width: 80%;
+
+    justify-content: space-between;
+    padding: 0.5em;
+    margin: 1em;
+    justify-self: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.new-note-form {
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    gap: 0.5rem; /* space between title and text */
+}
+
+.new-note-form input,
+.new-note-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin: 0;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.note-title-input {
+    font-weight: bold; 
+}
+
+.note-title-input::placeholder {
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 /* .fake-icons i::before {
