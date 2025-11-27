@@ -13,21 +13,16 @@
 @import './pages/home.css';
 @import './pages/NoteIndex.css';
 
-/* @import './apps/note/pages/NoteIndex.css'; */
-
-@import './apps/mail/pages/MailIndex.css';
-
 /* Cmps */
 
 @import './cmps/UserMsg.css';
 @import './cmps/AppHeader.css';
-
-@import './apps/mail/cmps/MailList.css';
-@import './apps/mail/cmps/MailPreview.css';
-@import './apps/mail/cmps/MailHeader.css';
 
 /* Notes */
 @import './cmps/NoteList.css';
 @import './cmps/NoteDisplay.css';
 @import './cmps/NewNote.css';
 @import './cmps/footer.css';
+
+/* Mail */
+@import 'mail-main.css';

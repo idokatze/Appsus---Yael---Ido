@@ -6,7 +6,6 @@ import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 const { useState, useEffect } = React
 const { Link, useSearchParams } = ReactRouterDOM
 
-
 export function MailIndex() {
 
     const [mails, setMails] = useState(null)
@@ -15,7 +14,7 @@ export function MailIndex() {
 
     useEffect(() => {
         loadMails()
-    }, [])
+    }, [filterBy])
 
     function loadMails() {
         mailService.query(filterBy)
@@ -46,7 +45,10 @@ export function MailIndex() {
 
     return (
         <section className="mail-index">
-            <RightSideBar />
+            <RightSideBar
+                defaultFilter={filterBy}
+                onSetFilter={onSetFilter}
+            />
             <MailList
                 loadingClass={loadingClass}
                 mails={mails}

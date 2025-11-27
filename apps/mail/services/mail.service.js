@@ -244,6 +244,246 @@ const gMails = [
     removedAt: null,
     from: 'friend2@friends.com',
     to: 'user@appsus.com'
+  },
+  {
+    id: 'e121',
+    name: 'Yossi Cohen',
+    createdAt: 1714100800000,
+    subject: 'Meeting Reminder',
+    body: 'Don’t forget our meeting tomorrow at 10:00 AM.',
+    isRead: false,
+    sentAt: 1714100802000,
+    removedAt: 1714120000000, // removed on some date
+    from: 'yossi@workmail.com',
+    to: 'user@appsus.com'
+  },
+  {
+    id: 'e122',
+    name: 'שרה לוי',
+    createdAt: 1714104400000,
+    subject: 'תזכורת פרויקט',
+    body: 'נא להגיש את דוח הפרויקט עד יום חמישי.',
+    isRead: false,
+    sentAt: 1714104402000,
+    removedAt: 1714130000000,
+    from: 'sara@hebrewmail.com',
+    to: 'user@appsus.com'
+  },
+  {
+    id: 'e123',
+    name: 'ישראל כהן',
+    createdAt: 1714108000000,
+    subject: 'שיחת צוות',
+    body: 'השיחה השבועית נדחתה ליום רביעי בשעה 15:00.',
+    isRead: true,
+    sentAt: 1714108002000,
+    removedAt: 1714140000000,
+    from: 'israel@hebrewmail.com',
+    to: 'user@appsus.com'
+  },
+  {
+    id: 'e124',
+    name: 'פרשת השבוע',
+    createdAt: 1714111600000,
+    subject: 'פרשת וירא',
+    body: 'שלום! השבוע נקרא את פרשת וירא, עם הסברים והערות. שבוע מבורך!',
+    isRead: false,
+    sentAt: 1714111602000,
+    removedAt: 1714150000000,
+    from: 'torah-weekly@jewishmail.org',
+    to: 'user@appsus.com'
+  },
+  {
+    id: 'e125',
+    name: 'Promo',
+    createdAt: 1714115200000,
+    subject: '🔥 Flash Sale Today Only!',
+    body: 'Everything is 50% off! Grab your favorites before midnight.',
+    isRead: false,
+    sentAt: 1714115202000,
+    removedAt: 1714160000000,
+    from: 'promo@bigsales.com',
+    to: 'user@appsus.com'
+  },
+   {
+    id: 'e126',
+    name: 'Me',
+    createdAt: 1714170000000,
+    subject: 'Project update',
+    body: 'I have completed the first draft of the project report.',
+    isRead: true,
+    sentAt: 1714170002000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'team@workmail.com'
+  },
+  {
+    id: 'e127',
+    name: 'Me',
+    createdAt: 1714173600000,
+    subject: 'Lunch plans',
+    body: 'Are you free for lunch tomorrow at 12:30?',
+    isRead: true,
+    sentAt: 1714173602000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'friend@friends.com'
+  },
+  {
+    id: 'e128',
+    name: 'Me',
+    createdAt: 1714177200000,
+    subject: 'Invoice attached',
+    body: 'Please find attached the invoice for last month’s services.',
+    isRead: true,
+    sentAt: 1714177202000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'client@business.com'
+  },
+  {
+    id: 'e129',
+    name: 'Me',
+    createdAt: 1714180800000,
+    subject: 'Follow up',
+    body: 'Just following up on my previous email regarding the proposal.',
+    isRead: true,
+    sentAt: 1714180802000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'partner@workmail.com'
+  },
+  {
+    id: 'e130',
+    name: 'Me',
+    createdAt: 1714184400000,
+    subject: 'Party Invitation',
+    body: 'You’re invited to my birthday party this Saturday at 7 PM!',
+    isRead: true,
+    sentAt: 1714184402000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'friends@friends.com'
+  },
+  {
+    id: 'e131',
+    name: 'Me',
+    createdAt: 1714188000000,
+    subject: 'Meeting minutes',
+    body: 'Attached are the minutes from today’s team meeting.',
+    isRead: true,
+    sentAt: 1714188002000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'team@workmail.com'
+  },
+  {
+    id: 'e132',
+    name: 'Me',
+    createdAt: 1714191600000,
+    subject: 'Book recommendation',
+    body: 'I think you’ll really enjoy the book I mentioned last week.',
+    isRead: true,
+    sentAt: 1714191602000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'friend@friends.com'
+  },
+  {
+    id: 'e133',
+    name: 'Me',
+    createdAt: 1714195200000,
+    subject: 'Vacation photos',
+    body: 'Sharing some photos from my recent trip. Enjoy!',
+    isRead: true,
+    sentAt: 1714195202000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'family@family.com'
+  },
+  {
+    id: 'e134',
+    name: 'Me',
+    createdAt: 1714198800000,
+    subject: 'Website feedback',
+    body: 'Here’s my feedback on the new website design you sent me.',
+    isRead: true,
+    sentAt: 1714198802000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'designer@workmail.com'
+  },
+  {
+    id: 'e135',
+    name: 'Me',
+    createdAt: 1714202400000,
+    subject: 'Thank you!',
+    body: 'Thanks for your help with the project. Really appreciate it.',
+    isRead: true,
+    sentAt: 1714202402000,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'colleague@workmail.com'
+  },
+  {
+    id: 'e136',
+    name: 'Me',
+    createdAt: 1714206000000,
+    subject: 'Draft: Team Agenda',
+    body: 'Need to finalize the agenda for next week’s team meeting.',
+    isRead: false,
+    sentAt: null,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'team@workmail.com'
+  },
+  {
+    id: 'e137',
+    name: 'Me',
+    createdAt: 1714209600000,
+    subject: 'Draft: תכנון יום הולדת',
+    body: 'חושב להזמין את כולם למסיבה בשבת הקרובה.',
+    isRead: false,
+    sentAt: null,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'friends@friends.com'
+  },
+  {
+    id: 'e138',
+    name: 'Me',
+    createdAt: 1714213200000,
+    subject: 'Draft: חוות דעת על ספר',
+    body: 'מנסח חוות דעת קצרה על הספר שסיימתי לקרוא.',
+    isRead: false,
+    sentAt: null,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'bookclub@friends.com'
+  },
+  {
+    id: 'e139',
+    name: 'Me',
+    createdAt: 1714216800000,
+    subject: 'Draft: Reminder Email',
+    body: 'Reminder to check the progress of the pending tasks.',
+    isRead: false,
+    sentAt: null,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'colleague@workmail.com'
+  },
+  {
+    id: 'e140',
+    name: 'Me',
+    createdAt: 1714220400000,
+    subject: 'Draft: Travel Plans',
+    body: 'Planning the itinerary for the upcoming trip; need input.',
+    isRead: false,
+    sentAt: null,
+    removedAt: null,
+    from: 'user@appsus.com',
+    to: 'family@family.com'
   }
 ]
 
@@ -270,13 +510,18 @@ function query(filterBy = {}) {
     .then(mails => {
       const { status } = filterBy
       if (status === 'inbox') {
-        mails = mails.filter(mail => mail.to === gLoggedinUser.email)
+        mails = mails.filter(mail => 
+          mail.to === gLoggedinUser.email && !mail.removedAt
+        )
       }
       if (status === 'sent') {
         mails = mails.filter(mail => mail.from === gLoggedinUser.email)
       }
       if (status === 'trash') {
         mails = mails.filter(mail => mail.removedAt)
+      }
+      if (status === 'draft') {
+        mails = mails.filter(mail => !mail.sentAt)
       }
       return mails
     })
@@ -304,6 +549,7 @@ function getDefaultFilter() {
     txt: '',
     isRead: true,
     isStared: true,
+    isRemoved: true,
     lables: []
   }
 }
