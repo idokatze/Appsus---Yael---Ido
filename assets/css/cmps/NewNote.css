@@ -1,0 +1,50 @@
+.new-note {
+    grid-row: 1;
+    grid-column: 2;
+    background-color: yellow;
+}
+
+.new-note input[type='text'] {
+    width: 80%;
+    height: 1em;
+    transition: height 0.3s ease;
+}
+
+.new-note input[type='text']:focus {
+    height: 3em;
+}
+
+.fake-new-note {
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin: 1em;
+    justify-self: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.fake-text {
+    cursor: text;
+    padding: 1em;
+}
+.fake-icons {
+    display: flex;
+    gap: 0.5em;
+}
+
+.fake-icons i {
+    position: relative;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+/* .fake-icons i::before {
+    content: '';
+    z-index: -1;
+} */

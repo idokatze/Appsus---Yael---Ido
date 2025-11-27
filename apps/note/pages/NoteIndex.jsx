@@ -1,4 +1,6 @@
 import { NoteList } from '../cmps/NoteList.jsx'
+import { NewNote } from '../cmps/NewNote.jsx'
+
 import {
     showErrorMsg,
     showSuccessMsg,
@@ -54,7 +56,7 @@ export function NoteIndex() {
             {/* Future: <SideBar /> */}
             {/* Future: <NoteFilter defaultFilter={filterBy} onSetFilter={onSetFilter} /> */}
             <div className="placeholder">Placeholder</div>
-
+            <NewNote />
             <NoteList
                 notes={notes}
                 setNotes={setNotes}
