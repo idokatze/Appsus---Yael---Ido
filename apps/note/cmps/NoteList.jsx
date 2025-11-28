@@ -30,8 +30,8 @@ export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
     if (!notes.length) return <div>No Notes</div>
     return (
         <div className="notes-container">
+            <h4 className="pinned-title">Pinned</h4>
             <div className="note-list pinned">
-                <h4 className="pinned-title">Pinned</h4>
                 {notes
                     .filter((note) => note.isPinned)
                     .map((note) => (
@@ -62,9 +62,8 @@ export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
                         </div>
                     ))}
             </div>
+            <h4 className="pinned-title">Unpinned</h4>
             <div className="note-list unpinned">
-                <h4 className="pinned-title">Unpinned</h4>
-
                 {notes
                     .filter((note) => !note.isPinned)
                     .map((note) => (

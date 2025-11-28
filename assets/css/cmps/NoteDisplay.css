@@ -1,14 +1,30 @@
 .note {
-    break-inside: avoid; /* prevent notes from splitting */
-    margin-bottom: 16px; /* spacing between notes */
+    break-inside: avoid;
+    margin-bottom: 16px;
     background: #fff;
     border-radius: 6px;
-    padding: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out; /* Transition 'box-shadow' over 0.3 seconds with an ease-in-out timing function */
+    transition: box-shadow 0.3s ease-in-out;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     position: relative;
+}
+
+.note-card > :not(.note-img) {
+    padding: 12px;
+}
+
+.note-img,
+img {
+    border-radius: 6px;
+}
+
+.note-img,
+.note-img img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .note:hover {
@@ -55,7 +71,7 @@
     opacity: 0.3;
 }
 
- .unpinned .btn-pin i {
+.unpinned .btn-pin i {
     transform: rotate(180deg);
     opacity: 0.3;
 }
