@@ -6,7 +6,7 @@
      background-color: var(--mail-idx-bg-clr);
      color: var(--mail-idx-font-clr);
 
-     font-family:"Google Sans Text",Roboto,Helvetica,Arial,sans-serif;
+     font-family:'Google Sans Text','Roboto',Helvetica,Arial,sans-serif;
      font-size: 14px;
  }
 

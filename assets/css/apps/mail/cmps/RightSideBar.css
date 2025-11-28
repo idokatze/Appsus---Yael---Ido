@@ -1,11 +1,60 @@
-.side-nav-btn{
-    cursor: pointer;
-    padding: 10px;
 
+.side-nav-btn {
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 14px;
+    height: 32px;
+    width: 240px;
+
+    padding: 0 12px 0 26px;
+    font-size: 14px;
+
+    color: #202124;
+
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+.side-nav-btn:hover{
+    background-color: #e0e0e0;
 }
 
-.side-nav-btn:hover{
-    scale: 1.025;
+.side-nav-btn.active{
+    background-color: #d2e3fc;
+    font-weight: bold;
+}
+
+.side-nav-btn.compose-btn {
+    display: flex;
+    gap: 10px;
+
+    padding: 12px 18px;
+    margin: 0 8px 10px 8px;
+    height: 56px;
+    width: fit-content;
+    border-radius: 18px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+    background-color: #c2e7ff;
+}
+.side-nav-btn i{
+    align-content: center;
+    height: 20px;
+    width: 20px;
+}
+
+.compose-btn:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.compose-btn i {
+    font-size: 15px;
 }

@@ -17,7 +17,8 @@ export function MailPreview({ mail, onOpenMail, onStar }) {
             <div className="sender-section">
                 <span className="star"
                     onClick={handleStarClick}
-                ><i className={ `fa-regular fa-star ${isStarred ? 'on' : 'off'}`}></i>
+                ><i className={ `fa-solid fa-star ${isStarred ? 'on' : 'off'}`}
+                title={isStarred ? 'Starred' : 'Not Starred'}></i>
                 </span>
 
                 <div className="sender-name-prev" >{name}</div>
