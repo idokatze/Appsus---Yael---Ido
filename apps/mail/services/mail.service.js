@@ -11,6 +11,7 @@ const gMails = [
     subject: 'Miss you!',
     body: 'Would love to catch up sometime. Been thinking about you lately.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714028802000,
     removedAt: null,
     from: 'momo@momo.com',
@@ -23,6 +24,7 @@ const gMails = [
     subject: 'Your order has shipped',
     body: 'Your package is on its way! Expected delivery: 2–3 business days.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714032403000,
     removedAt: null,
     from: 'store@shopnow.com',
@@ -35,6 +37,7 @@ const gMails = [
     subject: 'Meeting rescheduled',
     body: 'Reminder: our meeting moved to Thursday.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714036002000,
     removedAt: null,
     from: 'boss@work.com',
@@ -47,6 +50,7 @@ const gMails = [
     subject: 'Family update',
     body: 'Hope you’re doing well! The family misses you and can’t wait to meet soon.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714039603000,
     removedAt: null,
     from: 'mom@family.com',
@@ -59,6 +63,7 @@ const gMails = [
     subject: 'Beach day moved',
     body: 'Weather looks better on Thursday — let’s go then.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714043201000,
     removedAt: null,
     from: 'friend@friends.com',
@@ -72,6 +77,7 @@ const gMails = [
     subject: '🔥 Limited-Time Offer Just for You!',
     body: 'Save 40% today! Huge discounts across all categories. Don’t miss this exclusive offer.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714046802000,
     removedAt: null,
     from: 'promo@bigsales.com',
@@ -84,6 +90,7 @@ const gMails = [
     subject: 'You won a free prize!!! 🎉',
     body: 'Click HERE to claim your reward now! Limited time!',
     isRead: false,
+    isStarred: false,
     sentAt: 1714050403000,
     removedAt: null,
     from: 'spammy@unknown.win',
@@ -96,6 +103,7 @@ const gMails = [
     subject: 'פרשת השבוע - ויצא',
     body: 'שלום! השבוע קוראים את פרשת ויצא...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714054002000,
     removedAt: null,
     from: 'torah-weekly@jewishmail.org',
@@ -108,6 +116,7 @@ const gMails = [
     subject: 'שלום, רציתי לשאול',
     body: 'היי, יש לי שאלה לגבי מה שדיברנו...',
     isRead: true,
+    isStarred: false,
     sentAt: 1714057603000,
     removedAt: null,
     from: 'noa@gmail.com',
@@ -120,11 +129,13 @@ const gMails = [
     subject: 'Note to myself',
     body: 'Reminder: finish the side project...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714061202000,
     removedAt: null,
     from: 'user@appsus.com',
     to: 'user@appsus.com'
   },
+
   {
     id: 'e111',
     name: 'Billing',
@@ -132,6 +143,7 @@ const gMails = [
     subject: 'Invoice for April',
     body: 'Your monthly invoice is ready to view...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714064801000,
     removedAt: null,
     from: 'billing@service.com',
@@ -144,6 +156,7 @@ const gMails = [
     subject: 'Quick question',
     body: 'Hey! Are you free for a short call later today?',
     isRead: true,
+    isStarred: false,
     sentAt: 1714068402000,
     removedAt: null,
     from: 'daniel@friends.com',
@@ -156,6 +169,7 @@ const gMails = [
     subject: 'Your package is waiting',
     body: 'We tried delivering your package...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714072003000,
     removedAt: null,
     from: 'delivery@courier.com',
@@ -168,6 +182,7 @@ const gMails = [
     subject: 'Security alert',
     body: 'A login attempt was detected...',
     isRead: true,
+    isStarred: false,
     sentAt: 1714075602000,
     removedAt: null,
     from: 'security@webmail.com',
@@ -180,11 +195,13 @@ const gMails = [
     subject: 'Weekend plans?',
     body: 'Any chance you want to plan something fun this weekend?',
     isRead: false,
+    isStarred: false,
     sentAt: 1714079203000,
     removedAt: null,
     from: 'lily@friends.com',
     to: 'user@appsus.com'
   },
+
   {
     id: 'e116',
     name: 'Support',
@@ -192,6 +209,7 @@ const gMails = [
     subject: 'Your subscription expires soon',
     body: 'Your premium subscription expires in 5 days...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714082802000,
     removedAt: null,
     from: 'support@premiumplus.com',
@@ -204,6 +222,7 @@ const gMails = [
     subject: 'Job opportunity',
     body: 'We reviewed your profile and think you might be a good fit...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714086403000,
     removedAt: null,
     from: 'recruiting@hiringnow.com',
@@ -216,6 +235,7 @@ const gMails = [
     subject: 'Recipe you asked for',
     body: 'Here’s the recipe...',
     isRead: true,
+    isStarred: false,
     sentAt: 1714090002000,
     removedAt: null,
     from: 'chef@kitchenmail.com',
@@ -228,6 +248,7 @@ const gMails = [
     subject: 'System maintenance',
     body: 'Our services will be undergoing maintenance tonight...',
     isRead: false,
+    isStarred: false,
     sentAt: 1714093603000,
     removedAt: null,
     from: 'admin@system.com',
@@ -240,11 +261,13 @@ const gMails = [
     subject: 'Congrats!',
     body: 'Just wanted to say congratulations!',
     isRead: true,
+    isStarred: false,
     sentAt: 1714097202000,
     removedAt: null,
     from: 'friend2@friends.com',
     to: 'user@appsus.com'
   },
+
   {
     id: 'e121',
     name: 'Yossi Cohen',
@@ -252,8 +275,9 @@ const gMails = [
     subject: 'Meeting Reminder',
     body: 'Don’t forget our meeting tomorrow at 10:00 AM.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714100802000,
-    removedAt: 1714120000000, // removed on some date
+    removedAt: 1714120000000,
     from: 'yossi@workmail.com',
     to: 'user@appsus.com'
   },
@@ -264,6 +288,7 @@ const gMails = [
     subject: 'תזכורת פרויקט',
     body: 'נא להגיש את דוח הפרויקט עד יום חמישי.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714104402000,
     removedAt: 1714130000000,
     from: 'sara@hebrewmail.com',
@@ -276,6 +301,7 @@ const gMails = [
     subject: 'שיחת צוות',
     body: 'השיחה השבועית נדחתה ליום רביעי בשעה 15:00.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714108002000,
     removedAt: 1714140000000,
     from: 'israel@hebrewmail.com',
@@ -288,6 +314,7 @@ const gMails = [
     subject: 'פרשת וירא',
     body: 'שלום! השבוע נקרא את פרשת וירא, עם הסברים והערות. שבוע מבורך!',
     isRead: false,
+    isStarred: false,
     sentAt: 1714111602000,
     removedAt: 1714150000000,
     from: 'torah-weekly@jewishmail.org',
@@ -300,11 +327,13 @@ const gMails = [
     subject: '🔥 Flash Sale Today Only!',
     body: 'Everything is 50% off! Grab your favorites before midnight.',
     isRead: false,
+    isStarred: false,
     sentAt: 1714115202000,
     removedAt: 1714160000000,
     from: 'promo@bigsales.com',
     to: 'user@appsus.com'
   },
+
   {
     id: 'e126',
     name: 'Me',
@@ -312,6 +341,7 @@ const gMails = [
     subject: 'Project update',
     body: 'I have completed the first draft of the project report.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714170002000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -324,6 +354,7 @@ const gMails = [
     subject: 'Lunch plans',
     body: 'Are you free for lunch tomorrow at 12:30?',
     isRead: true,
+    isStarred: false,
     sentAt: 1714173602000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -336,6 +367,7 @@ const gMails = [
     subject: 'Invoice attached',
     body: 'Please find attached the invoice for last month’s services.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714177202000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -348,6 +380,7 @@ const gMails = [
     subject: 'Follow up',
     body: 'Just following up on my previous email regarding the proposal.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714180802000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -360,6 +393,7 @@ const gMails = [
     subject: 'Party Invitation',
     body: 'You’re invited to my birthday party this Saturday at 7 PM!',
     isRead: true,
+    isStarred: false,
     sentAt: 1714184402000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -372,6 +406,7 @@ const gMails = [
     subject: 'Meeting minutes',
     body: 'Attached are the minutes from today’s team meeting.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714188002000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -384,6 +419,7 @@ const gMails = [
     subject: 'Book recommendation',
     body: 'I think you’ll really enjoy the book I mentioned last week.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714191602000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -396,6 +432,7 @@ const gMails = [
     subject: 'Vacation photos',
     body: 'Sharing some photos from my recent trip. Enjoy!',
     isRead: true,
+    isStarred: false,
     sentAt: 1714195202000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -408,6 +445,7 @@ const gMails = [
     subject: 'Website feedback',
     body: 'Here’s my feedback on the new website design you sent me.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714198802000,
     removedAt: null,
     from: 'user@appsus.com',
@@ -420,11 +458,13 @@ const gMails = [
     subject: 'Thank you!',
     body: 'Thanks for your help with the project. Really appreciate it.',
     isRead: true,
+    isStarred: false,
     sentAt: 1714202402000,
     removedAt: null,
     from: 'user@appsus.com',
     to: 'colleague@workmail.com'
   },
+
   {
     id: 'e136',
     name: 'Me',
@@ -432,6 +472,7 @@ const gMails = [
     subject: 'Draft: Team Agenda',
     body: 'Need to finalize the agenda for next week’s team meeting.',
     isRead: false,
+    isStarred: false,
     sentAt: null,
     removedAt: null,
     from: 'user@appsus.com',
@@ -444,6 +485,7 @@ const gMails = [
     subject: 'Draft: תכנון יום הולדת',
     body: 'חושב להזמין את כולם למסיבה בשבת הקרובה.',
     isRead: false,
+    isStarred: false,
     sentAt: null,
     removedAt: null,
     from: 'user@appsus.com',
@@ -456,6 +498,7 @@ const gMails = [
     subject: 'Draft: חוות דעת על ספר',
     body: 'מנסח חוות דעת קצרה על הספר שסיימתי לקרוא.',
     isRead: false,
+    isStarred: false,
     sentAt: null,
     removedAt: null,
     from: 'user@appsus.com',
@@ -468,6 +511,7 @@ const gMails = [
     subject: 'Draft: Reminder Email',
     body: 'Reminder to check the progress of the pending tasks.',
     isRead: false,
+    isStarred: false,
     sentAt: null,
     removedAt: null,
     from: 'user@appsus.com',
@@ -480,6 +524,7 @@ const gMails = [
     subject: 'Draft: Travel Plans',
     body: 'Planning the itinerary for the upcoming trip; need input.',
     isRead: false,
+    isStarred: false,
     sentAt: null,
     removedAt: null,
     from: 'user@appsus.com',
@@ -505,7 +550,7 @@ export const mailService = {
 }
 
 function query(filterBy = {}) {
-  const { status, isStared, txt } = filterBy
+  const { status, isStarred, txt } = filterBy
 
   return storageService.query(MAIL_KEY).then(mails => {
 
@@ -516,8 +561,8 @@ function query(filterBy = {}) {
       )
     }
     
-    if (isStared) {
-      return mails.filter(mail => mail.isStared === true)
+    if (isStarred && status !== 'trash') {
+      return mails.filter(mail => mail.isStarred === true)
     }
 
     if (status) {
@@ -562,7 +607,7 @@ function getDefaultFilter() {
     status: 'inbox',
     txt: '',
     isRead: false,
-    isStared: false,
+    isStarred: false,
     isRemoved: false,
     lables: []
   }

@@ -1,6 +1,14 @@
+const { useState, useEffect } = React
 import { MailPreview } from "MailPreview.jsx"
+import { mailService } from '../../mail/services/mail.service.js'
 
-export function MailList({ loadingClass, mails, onOpenMail }) {
+export function MailList({ loadingClass, mails, onOpenMail, onStar, onRemove }) {
+
+    const [initialMails, setMails] = useState(mails)
+
+    useEffect(() => {
+        setMails(initialMails)
+    }, [initialMails])
 
     if (!mails.length) return <div>No Mails To Show...</div>
 
@@ -10,8 +18,10 @@ export function MailList({ loadingClass, mails, onOpenMail }) {
                 {
                     mails.map(mail => (
                         <li className={loadingClass} key={mail.id} >
-                            <MailPreview mail={mail} 
-                            onOpenMail={onOpenMail} />
+                            <MailPreview mail={mail}
+                                onOpenMail={onOpenMail}
+                                onStar={onStar}
+                                onRemove={onRemove}/>
                         </li>
                     ))
                 }

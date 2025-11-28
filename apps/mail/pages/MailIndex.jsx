@@ -5,7 +5,7 @@ import { RightSideBar } from "../cmps/RightSideBar.jsx"
 import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 
 const { useState, useEffect } = React
-const { Link, useSearchParams, useNavigate } = ReactRouterDOM
+const { useSearchParams, useNavigate } = ReactRouterDOM
 
 export function MailIndex() {
 
@@ -13,7 +13,6 @@ export function MailIndex() {
     const [isLoading, setIsLoading] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
     const [selectedMail, setSelectedMail] = useState(null);
-    const navigate = useNavigate()
 
     useEffect(() => {
         loadMails()
@@ -42,12 +41,68 @@ export function MailIndex() {
         })
 
         mailService.get(mailId).then(mail => {
-            setSelectedMail(mail)})
-            .catch(err => {
-            console.error("Failed to load mail:", err);
+            setSelectedMail(mail)
         })
+            .catch(err => {
+                console.error("Failed to load mail:", err);
+            })
 
     }
+
+    const handleStar = (mailId, newValue) => {
+        console.log(newValue);
+
+        setMails(prevMails => {
+            const updated = prevMails.map(mail =>
+            mail.id === mailId
+                ? { ...mail, isStarred: mail.status !== 'trash' ? newValue : mail.isStarred }
+                : mail
+            )
+
+            const mailToUpdate = updated.find(mail => mail.id === mailId)
+            if (mailToUpdate && mailToUpdate.status !== 'trash'){
+                mailService.save(mailToUpdate).then(() => loadMails())
+                .catch(err => console.error('Failed to update starred:', err))                
+            }
+            return updated
+        })
+    }
+
+    function onRemove(mailId) {
+
+        const date = Date.now()
+
+        setMails(prevMails => {
+            const updated = prevMails.map(mail =>
+                mail.id === mailId ? 
+                { ...mail, 
+                    status: 'trash', removedAt: date, isStarred: false } : mail
+            )
+
+            const mailToUpdate = updated.find(mail => mail.id === mailId)
+            mailService.save(mailToUpdate).then(() => {
+                loadMails()
+            })
+
+            return updated
+        })
+    }
+
+    // function onDeleteMail(mailId) {
+    //     mailService.remove(mailId)
+    //         .then(() => {
+    //             setMails(mails => (
+    //                 mails.filter(mail => mail.id !== mailId)
+    //             ))
+    //         })
+    //         .catch(err => {
+    //             console.log('err:', err)
+    //             navigate('/mail')
+    //         })
+    //         .finally(() => {
+    //             console.log('finally');
+    //         })
+    // }
 
     const onBack = () => setSelectedMail(null);
 
@@ -71,6 +126,8 @@ export function MailIndex() {
                         mails={mails}
                         onOpenMail={onOpenMail}
                         onSelectMail={setSelectedMail}
+                        onStar={handleStar}
+                        onRemove={onRemove}
                     />)
             }
             <LeftSideBar />
