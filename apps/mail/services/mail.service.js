@@ -561,7 +561,7 @@ function query(filterBy = {}) {
       )
     }
     
-    if (isStarred) {
+    if (isStarred && status !== 'trash') {
       return mails.filter(mail => mail.isStarred === true)
     }
 

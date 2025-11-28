@@ -41,10 +41,11 @@ export function MailIndex() {
         })
 
         mailService.get(mailId).then(mail => {
-            setSelectedMail(mail)})
-            .catch(err => {
-            console.error("Failed to load mail:", err);
+            setSelectedMail(mail)
         })
+            .catch(err => {
+                console.error("Failed to load mail:", err);
+            })
 
     }
 
@@ -53,15 +54,55 @@ export function MailIndex() {
 
         setMails(prevMails => {
             const updated = prevMails.map(mail =>
-                mail.id === mailId ? { ...mail, isStarred: newValue } : mail
+            mail.id === mailId
+                ? { ...mail, isStarred: mail.status !== 'trash' ? newValue : mail.isStarred }
+                : mail
             )
 
             const mailToUpdate = updated.find(mail => mail.id === mailId)
-            mailService.save(mailToUpdate)
+            if (mailToUpdate && mailToUpdate.status !== 'trash'){
+                mailService.save(mailToUpdate).then(() => loadMails())
+                .catch(err => console.error('Failed to update starred:', err))                
+            }
+            return updated
+        })
+    }
+
+    function onRemove(mailId) {
+
+        const date = Date.now()
+
+        setMails(prevMails => {
+            const updated = prevMails.map(mail =>
+                mail.id === mailId ? 
+                { ...mail, 
+                    status: 'trash', removedAt: date, isStarred: false } : mail
+            )
+
+            const mailToUpdate = updated.find(mail => mail.id === mailId)
+            mailService.save(mailToUpdate).then(() => {
+                loadMails()
+            })
 
             return updated
         })
     }
+
+    // function onDeleteMail(mailId) {
+    //     mailService.remove(mailId)
+    //         .then(() => {
+    //             setMails(mails => (
+    //                 mails.filter(mail => mail.id !== mailId)
+    //             ))
+    //         })
+    //         .catch(err => {
+    //             console.log('err:', err)
+    //             navigate('/mail')
+    //         })
+    //         .finally(() => {
+    //             console.log('finally');
+    //         })
+    // }
 
     const onBack = () => setSelectedMail(null);
 
@@ -86,6 +127,7 @@ export function MailIndex() {
                         onOpenMail={onOpenMail}
                         onSelectMail={setSelectedMail}
                         onStar={handleStar}
+                        onRemove={onRemove}
                     />)
             }
             <LeftSideBar />

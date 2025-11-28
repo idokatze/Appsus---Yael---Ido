@@ -2,7 +2,7 @@ const { useState, useEffect } = React
 import { MailPreview } from "MailPreview.jsx"
 import { mailService } from '../../mail/services/mail.service.js'
 
-export function MailList({ loadingClass, mails, onOpenMail, onStar }) {
+export function MailList({ loadingClass, mails, onOpenMail, onStar, onRemove }) {
 
     const [initialMails, setMails] = useState(mails)
 
@@ -20,7 +20,8 @@ export function MailList({ loadingClass, mails, onOpenMail, onStar }) {
                         <li className={loadingClass} key={mail.id} >
                             <MailPreview mail={mail}
                                 onOpenMail={onOpenMail}
-                                onStar={onStar} />
+                                onStar={onStar}
+                                onRemove={onRemove}/>
                         </li>
                     ))
                 }
