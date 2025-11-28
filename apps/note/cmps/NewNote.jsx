@@ -65,7 +65,13 @@ export function NewNote({ onAddNote }) {
                         />
                         <textarea
                             name="txt"
+                            className="note-textarea"
                             placeholder="Write your note here..."
+                            onInput={(e) => {
+                                e.target.style.height = 'auto'
+                                e.target.style.height = `${e.target.scrollHeight}px`
+                            }}
+                            autoFocus
                         />
                     </form>
                 </div>

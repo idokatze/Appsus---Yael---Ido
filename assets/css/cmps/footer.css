@@ -21,11 +21,20 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.4s ease;
     z-index: -1;
 }
 
 .note-footer .btn:hover::before {
     z-index: 0;
-    opacity: .3;
+    opacity: 0.3;
+}
+
+.note-card .note-footer {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.note-card:hover .note-footer {
+    opacity: 1;
 }

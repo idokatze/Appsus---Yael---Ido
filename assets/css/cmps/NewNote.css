@@ -75,13 +75,22 @@
     outline: none;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
+    resize: none;
 }
 
 .note-title-input {
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .note-title-input::placeholder {
     font-weight: bold;
     font-size: 1.3em;
+}
+
+.note-textarea {
+    font-family: 'Roboto', sans-serif;
+    resize: none; /* remove bottom-right resize grip */
+    overflow: hidden; /* no scrollbars */
+    min-height: 100px; /* starting height */
+    width: 100%;
 }
