@@ -75,3 +75,7 @@ img {
     transform: rotate(180deg);
     opacity: 0.3;
 }
+
+.note-img h4 {
+    padding: 12px;
+}
