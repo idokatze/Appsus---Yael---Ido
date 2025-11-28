@@ -1,4 +1,4 @@
-.mail-preview{
+.mail-preview {
     display: grid;
     grid-template-columns: minmax(200px, 1fr) 1fr minmax(70px, 1fr);
 
@@ -10,25 +10,47 @@
 
     cursor: pointer;
 
-    &:hover{
-        box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.12);
-        border-color: #dcdcdc ;
+    &:hover {
+        box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.12);
+        border-color: #dcdcdc;
     }
 }
 
-.sender-section{
+.sender-section {
     grid-column: 1;
+    display: flex;
+    gap: 5px;
 }
 
-.mail-subject{
+.mail-subject {
     grid-column: 2;
 }
 
-.date-section{
+.date-section {
     grid-column: 3;
     justify-self: end;
 }
 
-.read-mail{
+.read-mail {
     background: var(--open-mail-bg-clr);
+}
+
+.star {
+    height: fit-content;
+}
+
+.star button:hover {
+    background-color: inherit;
+}
+
+.star i.on {
+    color: darkgoldenrod;
+}
+
+.star i.off {
+    color: #101010;
+}
+
+.star.edit .off {
+    color: #ccc;
 }

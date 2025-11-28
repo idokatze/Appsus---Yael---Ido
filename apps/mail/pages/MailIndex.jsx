@@ -5,7 +5,7 @@ import { RightSideBar } from "../cmps/RightSideBar.jsx"
 import { LeftSideBar } from "../cmps/LeftSideBar.jsx"
 
 const { useState, useEffect } = React
-const { Link, useSearchParams, useNavigate } = ReactRouterDOM
+const { useSearchParams, useNavigate } = ReactRouterDOM
 
 export function MailIndex() {
 
@@ -13,7 +13,6 @@ export function MailIndex() {
     const [isLoading, setIsLoading] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
     const [selectedMail, setSelectedMail] = useState(null);
-    const navigate = useNavigate()
 
     useEffect(() => {
         loadMails()
@@ -49,6 +48,21 @@ export function MailIndex() {
 
     }
 
+    const handleStar = (mailId, newValue) => {
+        console.log(newValue);
+
+        setMails(prevMails => {
+            const updated = prevMails.map(mail =>
+                mail.id === mailId ? { ...mail, isStarred: newValue } : mail
+            )
+
+            const mailToUpdate = updated.find(mail => mail.id === mailId)
+            mailService.save(mailToUpdate)
+
+            return updated
+        })
+    }
+
     const onBack = () => setSelectedMail(null);
 
     if (!mails) return <div className="loader">Loading...</div>
@@ -71,6 +85,7 @@ export function MailIndex() {
                         mails={mails}
                         onOpenMail={onOpenMail}
                         onSelectMail={setSelectedMail}
+                        onStar={handleStar}
                     />)
             }
             <LeftSideBar />

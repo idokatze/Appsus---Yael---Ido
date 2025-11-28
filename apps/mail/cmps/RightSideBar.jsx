@@ -6,22 +6,20 @@ export function RightSideBar({ defaultFilter, onSetFilter }) {
 
     function handleStatusChange(status) {
         setFilterByToEdit(prevFilter => 
-            ({ ...prevFilter, status, isStared: false }))
+            ({ ...prevFilter, status, isStarred: false }))
     }
 
     function onShowStarred() {
         setFilterByToEdit(prevFilter => ({
             ...prevFilter,
             status: '',
-            isStared: true
+            isStarred: true
         }))
     }
 
     useEffect(() => {
         onSetFilter(filterByToEdit)
     }, [filterByToEdit])
-
-    const { status } = filterByToEdit
 
     return (
         <section className="right-sidebar">
