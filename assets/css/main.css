@@ -23,6 +23,7 @@
 @import './cmps/NoteDisplay.css';
 @import './cmps/NewNote.css';
 @import './cmps/footer.css';
+@import './cmps/ColorModal.css';
 
 /* Mail */
 @import 'mail-main.css';

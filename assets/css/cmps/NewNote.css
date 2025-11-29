@@ -94,3 +94,8 @@
     min-height: 100px; /* starting height */
     width: 100%;
 }
+
+.color-swatch-row {
+    display: flex;
+    justify-content: space-around;
+}

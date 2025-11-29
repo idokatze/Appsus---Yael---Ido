@@ -1,18 +1,28 @@
 import { NoteDisplay } from './NoteDisplay.jsx'
 import { NoteFooter } from './NoteFooter.jsx'
 
-function onChangeColor(noteId) {
-    console.log('change color')
-    // open color modal
-    // set state with new color
-}
-
-function onShare(noteId) {
-    console.log('share')
-    // share modal (email, facebook, download)
-}
-
 export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
+    function onChangeColor(noteId, color) {
+        setNotes((prevNotes) =>
+            prevNotes.map((note) => {
+                if (note.id === noteId) {
+                    return {
+                        ...note,
+                        style: {
+                            ...note.style,
+                            backgroundColor: color,
+                        },
+                    }
+                }
+                return note
+            })
+        )
+    }
+
+    function onShare(noteId) {
+        console.log('share')
+        // share modal (email, facebook, download)
+    }
     function togglePin(noteId) {
         setNotes((prevNotes) =>
             prevNotes.map((note) =>

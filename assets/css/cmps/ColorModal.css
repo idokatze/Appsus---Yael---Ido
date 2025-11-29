@@ -1,0 +1,53 @@
+.color-modal-overlay {
+    position: fixed; /* cover the whole viewport */
+    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.3); /* semi-transparent backdrop */
+    display: flex; /* center modal */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* make sure it's above other elements */
+}
+
+.color-modal {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgb(128, 128, 128, 0.5);
+}
+
+.color-circle.selected {
+    border: 5px solid purple;
+}
+
+/* Example swatch colors */
+.color-circle.white {
+    background: rgb(255, 255, 255);
+}
+.color-circle.coral {
+    background: rgb(255, 127, 80);
+}
+.color-circle.peach {
+    background: rgb(255, 218, 185);
+}
+.color-circle.sand {
+    background: rgb(244, 164, 96);
+}
+.color-circle.mint {
+    background: rgb(189, 252, 201);
+}
+.color-circle.sage {
+    background: rgb(188, 184, 138);
+}
+.color-circle.lilac {
+    background: rgb(200, 162, 200);
+}

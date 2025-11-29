@@ -105,7 +105,7 @@ const hardCodedNotes = [
         createdAt: 1112231,
         type: 'NoteTxt',
         isPinned: false,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: { title: 'Dark Mode', txt: 'Dark mode test note' },
     },
     {
@@ -113,7 +113,7 @@ const hardCodedNotes = [
         createdAt: 1112232,
         type: 'NoteImg',
         isPinned: false,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: {
             url: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             title: 'Puppies 4',
@@ -138,7 +138,7 @@ const hardCodedNotes = [
         createdAt: 1112234,
         type: 'NoteTxt',
         isPinned: true,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: { title: 'Pinned Note', txt: 'Pinned but no color' },
     },
     {
@@ -157,7 +157,7 @@ const hardCodedNotes = [
         createdAt: 1112236,
         type: 'NoteTodos',
         isPinned: false,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: {
             title: 'Study plan',
             todos: [
@@ -179,7 +179,7 @@ const hardCodedNotes = [
         createdAt: 1112238,
         type: 'NoteImg',
         isPinned: true,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: {
             url: 'https://images.unsplash.com/photo-1504826260979-242151ee45b7?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             title: 'Puppy 6',
@@ -204,7 +204,7 @@ const hardCodedNotes = [
         createdAt: 1112240,
         type: 'NoteTxt',
         isPinned: false,
-        // no color
+        style: { backgroundColor: 'rgb(255, 255, 255)' }, // white
         info: { title: 'Quick Thought', txt: 'Quick thought: keep learning!' },
     },
     {

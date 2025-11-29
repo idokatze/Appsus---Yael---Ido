@@ -1,15 +1,33 @@
 // NoteFooter.jsx
+import { ColorModal } from "./ColorModal.jsx"
+const { useState, useEffect } = React
 
 export function NoteFooter({ note, onDelete, onChangeColor, onShare }) {
+    const [isColorModalOpen, setIsColorModalOpen] = useState(false)
+    const currentColor = note.style.backgroundColor
+
+    function onSelectColor(color) {
+        if (color !== note.style.backgroundColor) {
+            onChangeColor(note.id, color)
+        }
+    }
+
     return (
         <footer className="note-footer">
             <button
                 className="btn change-color"
-                onClick={() => onChangeColor(note.id)}
-                title="Change background"
+                onClick={() => setIsColorModalOpen(true)}
+                title="Change background color"
             >
                 <i className="fa-solid fa-palette"></i>
             </button>
+            {isColorModalOpen && (
+                <ColorModal
+                    currentColor={note.style.backgroundColor}
+                    onSelectColor={onSelectColor}
+                    onClose={() => setIsColorModalOpen(false)}
+                />
+            )}
             <button
                 className="btn share-note"
                 onClick={() => onShare(note)}
