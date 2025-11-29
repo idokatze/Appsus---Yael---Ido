@@ -9,21 +9,32 @@ const colors = [
 ]
 
 export function ColorModal({ currentColor, onSelectColor, onClose }) {
+    function handleOverlayClick(ev) {
+        ev.stopPropagation()
+        onClose()
+    }
+
+    function handleColorClick(ev, colorValue) {
+        ev.stopPropagation()
+        onSelectColor(colorValue)
+        onClose() // optional: close after selecting
+    }
+
     return (
-        <div className="color-modal-overlay" onClick={onClose}>
-            <div
-                className="color-modal"
-                onClick={(ev) => ev.stopPropagation()} // prevent closing when clicking inside
-            >
-                {colors.map((color) => (
-                    <div
-                        key={color.name}
-                        className={`color-circle ${color.name} ${
-                            currentColor === color.value ? 'selected' : ''
-                        }`}
-                        onClick={() => onSelectColor(color.value)} // only change color, don't close
-                    ></div>
-                ))}
+        <div className="color-modal-overlay" onClick={handleOverlayClick}>
+            <div className="color-modal" onClick={(ev) => ev.stopPropagation()}>
+                {colors.map(({ name, value }) => {
+                    const isSelected = currentColor === value
+                    return (
+                        <div
+                            key={name}
+                            className={`color-circle ${name}${
+                                isSelected ? ' selected' : ''
+                            }`}
+                            onClick={(ev) => handleColorClick(ev, value)}
+                        />
+                    )
+                })}
             </div>
         </div>
     )

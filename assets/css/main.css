@@ -24,6 +24,8 @@
 @import './cmps/NewNote.css';
 @import './cmps/footer.css';
 @import './cmps/ColorModal.css';
+@import './cmps/ShareModal.css';
+@import './cmps/EditModal.css';
 
 /* Mail */
 @import 'mail-main.css';

@@ -1,7 +1,11 @@
 import { NoteDisplay } from './NoteDisplay.jsx'
 import { NoteFooter } from './NoteFooter.jsx'
+import { EditNoteModal } from './EditNoteModal.jsx'
 
-export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
+const { useState, useEffect, useRef } = React
+
+export function NoteList({ notes, setNotes, onSelectNoteId }) {
+    const [openNote, setOpenNote] = useState(null)
     function onChangeColor(noteId, color) {
         setNotes((prevNotes) =>
             prevNotes.map((note) => {
@@ -49,10 +53,17 @@ export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
                             key={note.id}
                             style={note.style}
                             className="note  note-card"
+                            onClick={() => {
+                                setOpenNote(note)
+                                console.log('openNote state set', note)
+                            }}
                         >
                             <button
                                 className="btn-pin"
-                                onClick={() => togglePin(note.id)}
+                                onClick={(ev) => {
+                                    ev.stopPropagation()
+                                    togglePin(note.id)
+                                }}
                             >
                                 {note.isPinned ? (
                                     <i className="pin fa-solid fa-thumbtack"></i>
@@ -80,11 +91,15 @@ export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
                         <div
                             key={note.id}
                             style={note.style}
-                            className="note  note-card"
+                            className="note note-card"
+                            onClick={() => setOpenNote(note)} // card click opens modal
                         >
                             <button
                                 className="btn-pin"
-                                onClick={() => togglePin(note.id)}
+                                onClick={(ev) => {
+                                    ev.stopPropagation()
+                                    togglePin(note.id)
+                                }}
                             >
                                 {note.isPinned ? (
                                     <i className="pin fa-solid fa-thumbtack"></i>
@@ -104,6 +119,21 @@ export function NoteList({ notes, setNotes, onSelectNoteId, onRemoveNote }) {
                         </div>
                     ))}
             </div>
+
+            {openNote && (
+                <EditNoteModal
+                    note={openNote}
+                    onClose={() => setOpenNote(null)}
+                    onSave={(updatedNote) => {
+                        // update notes state
+                        setNotes((prevNotes) =>
+                            prevNotes.map((n) =>
+                                n.id === updatedNote.id ? updatedNote : n
+                            )
+                        )
+                    }}
+                />
+            )}
         </div>
     )
 }

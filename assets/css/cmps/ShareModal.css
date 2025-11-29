@@ -1,0 +1,32 @@
+.share-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.share-modal {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.share-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.share-options button {
+    padding: 0.5rem;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+}
