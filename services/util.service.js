@@ -8,7 +8,7 @@ export const utilService = {
     getMonthName,
     getShortDate,
     loadFromStorage,
-    saveToStorage
+    saveToStorage,
 }
 
 function saveToStorage(key, val) {
@@ -22,7 +22,8 @@ function loadFromStorage(key) {
 
 function makeId(length = 6) {
     var txt = ''
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    var possible =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
     for (var i = 0; i < length; i++) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length))
@@ -32,7 +33,40 @@ function makeId(length = 6) {
 }
 
 function makeLorem(size = 100) {
-    var words = ['The sky', 'above', 'the port', 'was', 'the color of television', 'tuned', 'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
+    var words = [
+        'The sky',
+        'above',
+        'the port',
+        'was',
+        'the color of television',
+        'tuned',
+        'to',
+        'a dead channel',
+        '.',
+        'All',
+        'this happened',
+        'more or less',
+        '.',
+        'I',
+        'had',
+        'the story',
+        'bit by bit',
+        'from various people',
+        'and',
+        'as generally',
+        'happens',
+        'in such cases',
+        'each time',
+        'it',
+        'was',
+        'a different story',
+        '.',
+        'It',
+        'was',
+        'a pleasure',
+        'to',
+        'burn',
+    ]
     var txt = ''
     while (size > 0) {
         size--
@@ -44,11 +78,11 @@ function makeLorem(size = 100) {
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
 }
 
 function padNum(num) {
-    return (num > 9) ? num + '' : '0' + num
+    return num > 9 ? num + '' : '0' + num
 }
 
 function getRandomColor() {
@@ -65,10 +99,20 @@ function getDayName(date, locale) {
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
 
-
 function getMonthName(date) {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+    const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
     ]
     return monthNames[date.getMonth()]
 }
@@ -78,4 +122,14 @@ function getShortDate(date) {
     const month = getMonthName(date).slice(0, 3)
     const day = date.getDate()
     return `${month} ${day}`
+}
+
+export function debounce(func, delay) {
+    let timeoutId
+    return (...args) => {
+        clearTimeout(timeoutId)
+        timeoutId = setTimeout(() => {
+            func(...args)
+        }, delay)
+    }
 }

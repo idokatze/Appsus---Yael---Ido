@@ -19,11 +19,10 @@ export function AppHeader() {
         return (
             <header className={`header ${headerClass}`}>
                 <section className="header-left">
-                    <i className="fa-solid fa-bars"></i>
                     <img src="./img/keep.jpg" alt="Keep Logo" />
                 </section>
 
-                <section className="search-area">Search Bar</section>
+                <section className="search-area"></section>
 
                 <nav>
                     <NavLink to="/mail">
@@ -33,7 +32,9 @@ export function AppHeader() {
                             className="nav-icon"
                         />
                     </NavLink>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/">
+                        <i className="fa-solid fa-house"></i>
+                    </NavLink>
                     <NavLink to="/about">About</NavLink>
                 </nav>
             </header>

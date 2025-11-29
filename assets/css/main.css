@@ -26,6 +26,7 @@
 @import './cmps/ColorModal.css';
 @import './cmps/ShareModal.css';
 @import './cmps/EditModal.css';
+@import './cmps/NoteFilter.css';
 
 /* Mail */
 @import 'mail-main.css';

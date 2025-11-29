@@ -1,5 +1,6 @@
 import { NoteList } from '../cmps/NoteList.jsx'
 import { NewNote } from '../cmps/NewNote.jsx'
+import { NoteFilter } from '../cmps/NoteFilter.jsx'
 
 import {
     showErrorMsg,
@@ -100,6 +101,7 @@ export function NoteIndex() {
     }
 
     const [filterBy, setFilterBy] = useState({ txt: '' })
+    const defaultFilter = { txt: '' }
 
     function getFilteredNotes(notes, filterBy) {
         if (!filterBy || !filterBy.txt) return notes
@@ -123,9 +125,13 @@ export function NoteIndex() {
 
     return (
         <section className="note-index">
-            {/* Future: <SideBar /> */}
-            {/* Future: <NoteFilter defaultFilter={filterBy} onSetFilter={onSetFilter} /> */}
-            <div className="placeholder">Placeholder</div>
+            <NoteFilter
+                defaultFilter={defaultFilter}
+                onSetFilter={onSetFilter}
+            />
+            <div className="placeholder">
+                <i className="fa-solid fa-bars"></i>
+            </div>
             <NewNote onAddNote={onAddNote} />
             <NoteList
                 notes={getFilteredNotes(notes, filterBy)}

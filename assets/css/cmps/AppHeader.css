@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-
+    align-items: center;
     background-color: lightcyan;
     border-bottom: 2px solid white;
 }
@@ -36,7 +36,7 @@
 }
 
 .header-left > * {
-    padding: 0.25em;
+    padding: 0.5em;
 }
 
 .header-left img {
@@ -46,11 +46,9 @@
 
 nav {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 nav img {
     width: 1.5em;
-    height: auto;
-    vertical-align: middle;
 }
