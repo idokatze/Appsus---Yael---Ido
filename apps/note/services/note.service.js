@@ -229,6 +229,7 @@ export const noteService = {
     save,
     getEmptyNote,
     getDefaultFilter,
+    _createNotes,
 }
 
 let gId = 'n121'

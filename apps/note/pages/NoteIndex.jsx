@@ -14,7 +14,15 @@ export function NoteIndex() {
     // const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
     const [notes, setNotes] = useState(() => {
         const saved = localStorage.getItem('notes')
-        return saved ? JSON.parse(saved) : []
+        const parsed = saved ? JSON.parse(saved) : []
+
+        if (parsed.length === 0) {
+            const hardCoded = noteService._createNotes()
+            console.log('hardCoded:', hardCoded)
+            return hardCoded
+        }
+
+        return parsed
     })
 
     useEffect(() => {
@@ -110,6 +118,8 @@ export function NoteIndex() {
     function onSetFilter(newFilterBy) {
         setFilterBy((prevFilter) => ({ ...prevFilter, ...newFilterBy }))
     }
+
+    console.log('notes:', notes)
 
     return (
         <section className="note-index">
