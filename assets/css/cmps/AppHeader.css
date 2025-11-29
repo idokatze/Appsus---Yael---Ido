@@ -8,7 +8,7 @@
 }
 
 .app-header nav a {
-    margin: .5em;
+    margin: 0.5em;
 }
 
 .app-header nav a:active {
@@ -19,4 +19,38 @@
     color: darkblue;
     font-weight: bold;
     text-decoration: overline;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    
+}
+
+.header-left {
+    display: flex;
+    align-items: center; 
+    gap: 0.5em; 
+}
+
+.header-left > * {
+    padding: 0.25em;
+}
+
+.header-left img {
+    width: 2.5em;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 1em;
+}
+
+nav img {
+    width: 1.5em;
+    height: auto;
+    vertical-align: middle;
 }
