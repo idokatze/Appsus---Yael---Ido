@@ -21,6 +21,10 @@ export function MailPreview({ mail, onOpenMail, onStar, onRemove }) {
         return
     }
 
+    const year = new Date(sentAt).getFullYear()
+    const currYear = new Date().getFullYear()
+    const displayYear = currYear>year? year : ''
+
     return (
         <article onClick={() => onOpenMail(id)}
             className={`mail-preview ${isRead ? 'read-mail' : ''}`}>
@@ -56,7 +60,7 @@ export function MailPreview({ mail, onOpenMail, onStar, onRemove }) {
                     <i className="fa-regular fa-trash-can"></i>
                 </div>
 
-                <div className="date-section">{utilService.getShortDate(sentAt)}</div>
+                <div className="date-section">{`${utilService.getShortDate(sentAt)} ${displayYear}`}</div>
             </div>
         </article >
     )

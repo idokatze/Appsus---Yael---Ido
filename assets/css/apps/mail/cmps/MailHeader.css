@@ -1,5 +1,6 @@
 .mail-header {
     display: flex;
+    place-items: center;
     justify-content: space-between;
     border: none;
     font-family: "Google Sans Text",'Roboto',Helvetica,Arial,sans-serif;
@@ -7,6 +8,19 @@
     background: var(--mail-idx-bg-clr);
 }
 
-.mail-header nav a {
-    margin: .5em;
+.mail-header .header-left{
+    display: flex;
+    div{
+        padding: 0;
+    }
+}
+
+nav {
+    display: flex;
+    place-items: center;
+}
+
+.mail-logo-name{
+    font: 27px 'Roboto', Arial, sans-serif;
+    color: #6D6D6D;
 }

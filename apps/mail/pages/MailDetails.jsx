@@ -1,9 +1,14 @@
+import { utilService } from "../../../services/util.service.js"
 
 export function MailDetails({ mail, onBack }) {
 
     if (!mail) return <div>Loading...</div>
 
     const { name, sentAt, subject, body, from } = mail
+
+    const year = new Date(sentAt).getFullYear()
+    const hours = new Date(sentAt).getHours()
+    const min = new Date(sentAt).getMinutes()
 
     return (
         <section className="mail-details-container">
@@ -18,7 +23,7 @@ export function MailDetails({ mail, onBack }) {
 
             <div className="mail-main">
                 <div className="avatar-container">
-                    <img src="../../../assets/img/avatar.png" 
+                    <img src="/assets/img/avatar.png" 
                     alt="Sender picture" className="avatar" />
                 </div>
 
@@ -31,8 +36,10 @@ export function MailDetails({ mail, onBack }) {
                                 <div className="sender-mail">&lt;{from}&gt;</div>                                
                         </div>
 
-                        <time className="mail-date" dateTime=""> {sentAt}</time>
-
+                        <time className="mail-date" dateTime=""> 
+                            {`${utilService.getShortDate(sentAt)} 
+                            ${year}, ${hours}:${utilService.padNum(min)}`}
+                            </time>
                     </div>
 
                     <article className="mail-body">{body}</article>
